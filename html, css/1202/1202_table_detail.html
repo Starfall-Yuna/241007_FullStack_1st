@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <table>, <tr>, <th>, <td> 사용 -->
+    <h1>인적사항 리스트</h1>
+    <table border="1" style="width:70%">
+        <!-- <table> 태그를 작성함과 동시에, <tbody> 태그 생략-->
+        <!-- <thead>(머리말), <tbody>(본문), <tfoot>(꼬리말) -->
+        <thead>
+            <!-- <caption> :: 표를 설명하는 역할 -->
+            <caption>인적사항 리스트(이름, 성별, 나이)</caption>
+            <tr>
+                <!-- colspan="4" :: 4개의 열을 병합(가로 병합) -->
+                <th colspan="4">인적사항 표</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <colgroup> :: 열을 그룹화하는 태그 -->
+            <colgroup>
+                <!-- <col>의 span 속성을 사용해서, 몇개의 열을 묶을지 결정-->
+                <col span="1" style="background-color:burlywood">
+                <col span="3" style="background-color:bisque">
+            </colgroup>
+            <tr>
+                <!-- rowspan="4" :: 4개의 행을 병합(세로 병합)-->
+                <th rowspan="4">데이터</th>
+                <th>이름</th>
+                <th>성별</th>
+                <th>나이</th>
+            </tr>
+            <tr>
+                <td>Lee</td>
+                <td>여성</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td>Park</td>
+                <td>남성</td>
+                <td>41</td>
+            </tr>
+            <tr>
+                <td>Kim</td>
+                <td>남성</td>
+                <td>37</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <th colspan="4">표의 끝</th>
+        </tfoot>
+    </table>
+</body>
+</html>
