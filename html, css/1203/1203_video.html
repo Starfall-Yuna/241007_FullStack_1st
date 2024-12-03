@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <video> :: 영상을 표현할 때 사용 -->
+    <video src="waterfall.mp4" width="400" height="700" poster="썸네일.jpg" controls>
+        <!-- <video> 태그를 지원X 브라우저에서 실행할 때 "대체 텍스트" 
+            or 해당 파일의 형식을 지원X 브라우저에서 실행할 때 "대체 텍스트"-->
+        이 브라우저에서는 해당 형식을 지원하지 않습니다.
+    </video>
+
+    <!-- <audio>랑 마찬가지로,
+        여러 영상 파일을 한꺼번에 올리고, 브라우저 상에서 선택하게끔 할 수 있음-->
+    <video width="400" height="700" poster="썸네일.jpg" controls>
+        <source src="waterfall.mp4" type="video/mp4">
+        <source src="waterfall.mpeg" type="video/mpeg">
+        이 브라우저에서는 해당 형식을 지원하지 않습니다.
+    </video>
+</body>
+</html>

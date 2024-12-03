@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- radio, checkbox 사용 시 
+        name속성을 통해서 카테고리 소속을 결정해야함 -->
+    <h3>성별 선택</h3>
+    <input id="male" type="radio" name="gender" value="male">
+    <label for="male">남성</label>
+    <input id="female" type="radio" name="gender" value="female">
+    <label for="female">여성</label>
+    <input id="etc" type="radio" name="gender" value="etc">
+    <label for="etc">기타</label>
+
+    <h3>취미 선택</h3>
+    <input type="checkbox" name="hobby" value="climb" id="climb">
+    <label for="climb">등산</label>
+    <input type="checkbox" name="hobby" value="read" id="read">
+    <label for="read">독서</label>
+    <input type="checkbox" name="hobby" value="game" id="game">
+    <label for="game">게임</label>
+    <input type="checkbox" name="hobby" value="exercise" id="exercise">
+    <label for="exercise">운동</label>
+
+    <!-- <label> 태그의 for 속성 = <input> 태그의 id 속성
+        => label 클릭할 시 연결된 <input> 타입으로 커서가 잡힘-->
+</body>
+</html>

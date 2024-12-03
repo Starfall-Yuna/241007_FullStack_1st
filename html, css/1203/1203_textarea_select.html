@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>회원가입 폼</h1>
+    <form action="link.html">
+        <label for="name">이름: </label>
+        <input id="name" type="text">
+        <br>
+
+        <label for="intro">자기소개: </label>   <br>
+        <!-- <textarea> 안으로 주석 입력해도 
+            주석이 아닌 텍스트 내용으로 간주함;; -->
+        <textarea id="intro" rows="10" cols="50">
+            자기소개를 입력해주세요.
+        </textarea>
+        <br>
+        <textarea id="intro" rows="10" cols="50" placeholder="자기소개를 입력해주세요."></textarea>
+        <br>
+
+        <!-- <select> 태그 :: 여러 선택지들 중 하나를 선택하여 입력 -->
+        <!-- <option> 태그 통해서 선택지 추가 -->
+        <label>전화번호: </label>
+        <select>
+            <option>선택</option>
+            <option>010</option>
+            <option>011</option>
+            <option>017</option>
+            <option>018</option>
+        </select> -
+        <input type="text" style="width:50px;"> -
+        <input type="text" style="width:50px;">
+        <br>
+        
+        <!-- <optgroup> :: <select> 태그의 <option> 그룹화 -->
+        <label>주요 사용 언어: </label>
+        <select>
+            <option>선택</option>
+            <optgroup label="웹 언어">     <!-- label 속성을 통해, 그룹 이름 지정-->
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>JavaScript</option>
+            </optgroup>
+            <optgroup label="프로그래밍 언어">
+                <option>C</option>
+                <option>Java</option>
+                <option>Python</option>
+            </optgroup>
+        </select>
+    </form>
+</body>
+</html>

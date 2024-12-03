@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 멀티미디어 표현 :: 오디오, 비디오, 유튜브 영상(<iframe>)-->
+    <!-- <audio> :: 음성 파일 표현할 때 사용 -->
+    <h3>행아웃 통화음 소리</h3>
+    <audio src="hangouts_incoming_call.ogg" loop controls>
+        <!-- <audio> 태그를 지원X 브라우저에서 실행할 때 "대체 텍스트" 
+            or 해당 파일의 형식을 지원X 브라우저에서 실행할 때 "대체 텍스트"-->
+        이 브라우저에서는 해당 형식을 지원하지 않습니다.
+    </audio>
+    <br>
+
+    <!-- 브라우저에서 지원 가능한 형식을 선택해서 
+        활용할 수 있게끔 설정하는 방법 -->
+    <audio controls>
+        <!-- <source> 태그 활용해서, 여러 개의 음성 파일을 등록 -->
+        <source src="hangouts_incoming_call.mp3" type="audio/mp3">
+        <source src="hangouts_incoming_call.ogg" type="audio/ogg">
+
+        <!-- 여러 파일을 등록하고 실행할 시, 지원하는 형식을 자동으로 표현-->
+    </audio>
+</body>
+</html>

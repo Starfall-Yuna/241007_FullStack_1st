@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 외부에 있는 css 파일 적용하는 구문 -->
+    <link rel="stylesheet" href="start_css.css">
+    <style>
+        /* css 주석 작성법 */
+        /* CSS :: 화면 디자인 담당 */
+        /*
+            * CSS 적용 방법 (3가지)
+            1) 인라인 스타일 :: 각 태그에 스타일 직접 적용
+            2) 내부 CSS :: <head>의 <style> 통해서 적용
+            3) 외부 CSS :: .css 파일을 html에 불러와서 적용
+        */
+
+        /* 내부 CSS 예시 */
+        span{
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 인라인 스타일의 예시-->
+    <span style="background-color:coral">
+        사각형
+    </span>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>회원가입 창</h1>
+    <form action="link.html">
+        <!-- <form> 태그 안으로 <input> 태그를 작성
+            이름, 성별, 생년월일을 입력받게 함-->
+        <label for="name">이름: </label>
+        <input type="text" id="name" > 
+        <br>
+
+        <label for="gender">성별: </label>
+        <input type="radio" name="gender" value="male" id="male">
+        <label for="male">남성</label>
+        <input type="radio" name="gender" value="female" id="female">
+        <label for="female">여성</label>
+        <input type="radio" name="gender" value="etc" id="etc">
+        <label for="etc">기타</label>
+        <br>
+
+        <label for="birth">생년월일: </label>
+        <input type="date" id="birth">
+        <br>
+
+        <input type="submit" value="회원가입 진행">
+    </form>
+
+    <!--
+        - type="button" :: 버튼 형태를 출력됌
+        - type="submit" :: 버튼 형태를 출력됌
+            (<form> 태그와 함께 서버에 관여할 수 있음)
+    -->
+</body>
+</html>
