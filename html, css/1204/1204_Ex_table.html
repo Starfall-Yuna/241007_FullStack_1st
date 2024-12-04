@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 선택자가 구체적인지 + css 선언 위치 */
+        table>tbody>tr>th[colspan]{
+            background-color:gray;
+        }
+        table>tbody>tr{
+            background-color:lightgray;
+        }
+    </style>
+</head>
+<body>
+    <table style="width: 70%">
+        <tr>
+            <th colspan="2">인적사항 표</th>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <th>성별</th>
+        </tr>
+        <tr>
+            <td>Lee</td>
+            <td>여성</td>
+        </tr>
+        <tr>
+            <td>Park</td>
+            <td>남성</td>
+        </tr>
+        <tr>
+            <td>Kim</td>
+            <td>남성</td>
+        </tr>
+    </table>
+</body>
+</html>

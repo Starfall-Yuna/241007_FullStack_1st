@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 속성 선택자([]) :: 특정 속성이 특정 속성값일 때 선택 */
+        [id="satur"]{       /* id값이 "satur"인 태그 선택 */
+            color: blue;
+        }
+        p[id="sun"]{        /* p태그 중 id값이 "sun"인 태그 선택 */
+            color:red;
+        }
+        h1, [id]{
+            /* h1 태그 전체와
+                id 속성에 대해 값을 갖고 있는 태그 선택 */
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>요일에 대해 나열하였습니다.</h1>
+    <p>월</p>
+    <p>화</p>
+    <p>수</p>
+    <p>목</p>
+    <p>금</p>
+    <p id="satur">토</p>
+    <p id="sun">일</p>
+</body>
+</html>

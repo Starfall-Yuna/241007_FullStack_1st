@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        <audio> 태그 :: 음성 파일을 표현 (src, controls, loop)
+        <video> 태그 :: 영상 파일을 표현 (src, controls)
+        <source> 태그를 통해서 여러 파일을 한꺼번에 등록 
+            (브라우저에서 지원하는 형식이 아닌 경우를 대비)
+    -->
+    
+    <!-- 입력 태그 :: <input>(type의 디폴트는 text), 
+                <textarea>, <select> -->
+    <h1>인적사항</h1>
+    <label for="name">이름: </label>
+    <input type="text" id="name"> <br>
+
+    <!-- radio, checkbox :: name 속성을 통해서 입력 태그를 "그룹화" -->
+    <label>혈액형: </label>
+    <input type="radio" id="A_blood" name="blood" value="A">
+    <label for="A_blood">A</label>
+    <input type="radio" id="B_blood" name="blood" value="B">
+    <label for="B_blood">B</label>
+    <input type="radio" id="O_blood" name="blood" value="O">
+    <label for="O_blood">O</label>
+    <input type="radio" id="AB_blood" name="blood" value="AB">
+    <label for="AB_blood">AB</label>       <br>
+
+    <label>평소에 하는 운동: </label>
+    <input type="checkbox" id="jog" name="exercise" value="jogging">
+    <label for="jog">조깅</label>
+    <input type="checkbox" id="cyc" name="exercise" value="cycle">
+    <label for="cyc">실내자전거</label>
+    <input type="checkbox" id="dum" name="exercise" value="dumb">
+    <label for="dum">덤벨</label>
+    <br>
+
+    <label>불편한 증상: </label><br>
+    <textarea cols="30" rows="5" placeholder="있는대로 다 적어주세요."></textarea>
+    <br>
+
+    <label>전화번호: </label>
+    <select name="first_num">
+        <option value="010">010</option>
+        <option value="017">017</option>
+        <option value="018">018</option>
+    </select> -
+    <input name="second_num"> - 
+    <input name="third_num">
+
+    <!-- <form> 태그의 action 속성을 통해, 다른 파일로 접근O -->
+</body>
+</html>

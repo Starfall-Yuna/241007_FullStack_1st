@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .piano{
+            display: inline-block;
+            width: 50px;
+            height: 200px;
+            border: 3px solid black;
+            text-align: center;
+            padding: 5px;
+
+            /* :hover, :active 전환에 대해 설정 */
+            transition: 2s;     /* 모든 속성값에 대한 지속시간 2s 설정 */
+            transition-timing-function: ease;
+            transition-delay: 1s;
+        }
+
+        .do:hover{
+            background-color: red;
+        }
+        .re:hover{
+            background-color: orange;
+        }
+        .mi:hover{
+            background-color: yellow;
+        }
+        .fa:hover{
+            background-color: yellowgreen;
+        }
+        .sol:hover{
+            background-color: skyblue;
+        }
+        .la:hover{
+            background-color: blue;
+        }
+        .si:hover{
+            background-color: purple;
+        }
+
+        .piano:active{
+            width: 70px;
+            height: 250px;
+            color: white;
+            font-size: 120%;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center">피아노</h1>
+    <div style="text-align: center">
+        <p class="first do piano">도</p>
+        <p class="re piano">레</p>
+        <p class="mi piano">미</p>
+        <p class="fa piano">파</p>
+        <p class="sol piano">솔</p>
+        <p class="la piano">라</p>
+        <p class="si piano">시</p>
+        <p class="second do piano">도</p>
+    </div>
+</body>
+</html>

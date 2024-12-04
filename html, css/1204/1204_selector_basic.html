@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css 주석 작성은 이렇게 */
+        /*
+            선택자{
+                속성명1: 속성값1;
+                속성명2: 속성값2;
+                ...
+            }
+        */
+
+        /* 태그 선택자 :: 지정된 태그에 대해서 선택 */
+        p{      /* "해당 파일에 있는 p 태그 전체에 대해서 적용하라." */
+            color: red;
+        }
+        /* id 선택자(#) :: 지정된 id값에 대해서 선택 */
+        #rect{
+            border: 2px solid black;
+        }
+        /* class 선택자(.) :: 지정된 class값이 포함된 태그에 대해 선택*/
+        .rect{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- id값이 "rect"이고
+        class값에 "first"와 "rect"가 있는
+        p 태그 -->
+    <p id="rect" class="first rect">사각형</p>
+    <p class="second rect">사각형</p>
+
+    <!-- 태그에 대하여, id는 하나의 값만 존재
+        class는 여러 값을 포함해서 존재 -->
+</body>
+</html>

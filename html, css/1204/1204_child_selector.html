@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 후손 선택자( ) :: 특정 태그 안에 있는 후손을 선택 */
+        div p{ /* div 안에 있는 p를 선택 => 아래에선 2개 선택 */
+            color: darkgreen;
+        }
+
+        /* 자식 선택자(>) :: 특정 태그 "바로" 안에 있는 자손(직계 후손) 선택*/
+        div>p{
+            background-color:burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>
+            <!-- <span> 자손(O), <div> 자손(X) -->
+            <!-- <span>이 부모(O), <div>가 부모(X)-->
+            <p>div 안의 span 안의 p 태그</p>
+        </span>
+        <p>div 안의 p 태그</p>
+    </div>
+</body>
+</html>

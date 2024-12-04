@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pTag{
+            background-color:darkorange;
+            width:100px;
+            height:100px;
+            transition: 3s;
+            font-size:200%;
+        }
+        .linear{transition-timing-function: linear;}
+        .ease{transition-timing-function: ease;}
+        .easeIn{transition-timing-function: ease-in;}
+        .easeOut{transition-timing-function: ease-out;}
+        .InOut{transition-timing-function: ease-in-out;}
+
+        .pTag:hover{
+            width:400px;
+        }
+    </style>
+</head>
+<body>
+    <p class="linear pTag">linear</p>
+    <p class="ease pTag">ease</p>
+    <p class="easeIn pTag">ease_in</p>
+    <p class="easeOut pTag">ease_out</p>
+    <p class="InOut pTag">ease_in_out</p>
+</body>
+</html>
