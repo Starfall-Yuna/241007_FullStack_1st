@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 형태 구조 선택자 :: 
+            first-of-type, last-of-type, 
+            nth-of-type(num), nth-last-of-type(num) */ 
+        div>p:first-of-type{    /* div 자손의 p 태그 중 첫번째에 대하여, */
+            color: blue;
+        }
+        div>p:last-of-type{     /* div 자손의 p 태그 중 마지막에 대하여, */
+            color: red;
+        }
+        div>p:nth-of-type(3){   /* div 자손의 p 태그 중 3번째에 대하여, */
+            color: green;
+        }
+        div>p:nth-last-of-type(2){
+            color:orange;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1st span 태그</span>
+        <p>1st 태그</p>
+        <p>2nd 태그</p>
+        <p>3rd 태그</p>
+        <p>4th 태그</p>
+        <p>5th 태그</p>
+        <span>last span 태그</span>
+    </div>
+</body>
+</html>

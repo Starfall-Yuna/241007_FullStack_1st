@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 문자 선택자 :: 
+            시작문자 선택자(::first-letter), 시작줄 선택자(::first-line)*/
+        #content::first-letter{ /* Lorem의 L 선택 */
+            font-size: 300%;
+        }
+        #content::first-line{
+            color:blue;
+        }
+
+        /* 전후 문자 선택자 -> ::before, ::after */
+        #content::before{
+            content: "(이 다음으로는 Lorem에 대한 설명이 이어집니다.)";
+        }
+        #content::after{
+            content: "(Lorem에 대한 설명이 끝났습니다.)";
+        }
+
+        .li::before{
+            content: "+ ";
+        }
+        .important::after{
+            content: " - 중요!!!"
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus iusto accusamus quod voluptatum sequi totam accusantium, esse, quisquam repellat quidem nostrum. Aliquam cumque vitae fuga excepturi ipsa odio molestias sit?
+    </div>
+    <br>
+
+    <h3>할 일</h3>
+    <p class="li important">실습 수업</p>
+    <p class="li">OT 진행</p>
+    <p class="li">저녁 먹기</p>
+</body>
+</html>

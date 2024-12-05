@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 후손/자손 선택자 :: 중첩 관계를 기반으로 작동 */
+        /* 동위 선택자 :: "동일한 위치 상 나란하게" 있는 태그 중 선택 */
+
+        /* 선택자1 + 선택자2 :: 선택자1 바로 뒤에 있는 선택자2 선택
+            (단일선택 or 선택X) */
+        h1 + ul{    /* h1 태그 바로 뒤에 있는 ul 선택 */
+            background-color:bisque;
+        }
+        /* h1 태그 바로 뒤로 ul 태그가 없으면, 아예 적용X */
+
+        /* 선택자1 ~ 선택자2 :: 선택자1 뒤에 있는 선택자2 선택 (복수선택) */
+        h1 ~ ul{
+            border: 3px solid darkseagreen;
+        }
+    </style>
+</head>
+<body>
+    <!-- h1 태그와 ul 태그도 형제 -->
+    <h1>구매할 물품</h1>
+    <!-- <br> -->
+    <ul>    <!-- ul 태그는 li 태그들의 부모 -->
+        <!-- 4개의 li 태그들은 모두 형제 -->
+        <li>동글이 리모컨</li>
+        <li>커피 스틱</li>
+        <li>텀블러</li>
+        <li>볼펜 리필본</li>
+    </ul>
+    <ul>
+        <li>시금치</li>
+        <li>콜라</li>
+    </ul>
+</body>
+</html>

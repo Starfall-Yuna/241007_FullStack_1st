@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 인라인 스타일, "내부 CSS", 외부 CSS */
+        /*
+            선택자{
+                속성명: 속성값;
+                ...
+            }
+        */
+        
+        /* 태그 선택자 :: "해당 파일에 있는 특정 태그 전체 선택" */
+        div{    /* 파일에 있는 div 전체 선택 */
+            width:200px;
+        }
+        /* id 선택자(#) :: "특정 id값을 가진 태그를 선택" */
+        #div{   /* id값이 div인 태그 선택 */
+            height:500px;
+        }
+        /* class 선택자(.) :: "특정 class값을 포함한 태그를 선택" */
+        .div{
+            background-color:aquamarine;
+        }
+        /* 속성 선택자([]) :: "특정 속성에서 특정 속성값을 가지는 태그 선택" */
+        div[id="div"]{  /* div 태그 중, id가 div인 태그 선택 */
+            border: 3px solid blue;
+        }
+
+        /* 후손 선택자( ) :: 특정 태그 안에 있는 후손 선택 */
+        div p{
+            color: red;
+        }
+        /* 자손 선택자(>) :: 특정 태그 "바로" 안에 있는 자손 선택 */
+        div>p{
+            background-color:burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div id="div" class="one div">
+        <span>      <!-- span이 div의 자손(O) -->
+            <p>p 태그</p>   <!-- p가 span의 자손(O), p가 div의 자손(X) -->
+        </span>
+        <p>p 태그</p>
+    </div>
+    <!-- 태그 선택자를 통하여,  width:200px; 적용 -->
+    <!-- id 선택자를 통하여, height:500px; 적용 -->
+    <!-- class 선택자를 통하여, background-color:aquamarine; 적용 -->
+    <!-- 속성 선택자 통해서,  border: 3px solid blue; 적용 -->
+</body>
+</html>

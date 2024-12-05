@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 반응 선택자 :: :hover, :active*/
+        button:hover{   /* button 태그에 마우스를 갖다대었을 때의 행위 지정 */
+            background-color:beige;
+        }
+        button:active{  /* button 태그에 마우스를 클릭하였을 때의 행위 지정 */
+            background-color:burlywood;
+        }
+
+        /* 상태 선택자 :: :checked, :focus, :enabled, :disabled */
+        /* :checked :: 체크된 상태의 (입력)태그 선택 */
+        [type="checkbox"]:checked + label{  
+            /* type의 속성이 checkbox인 태그 중 체크된 태그에 대하여,
+                바로 뒤에 있는 label 선택 */
+            color: red;
+        }
+
+        /* :enabled :: 사용이 가능한 (입력)태그 선택 */
+        [type="text"]:enabled{
+            background-color:coral;
+        }
+        /* :disabled :: 사용이 불가능한 (입력)태그 선택 */
+        [type="text"]:disabled{
+            background-color:gray;
+        }
+        /* :focus :: 포커싱이 맞춰진 태그 선택 */
+        [type="text"]:focus{
+            background-color:aquamarine;
+            color: blue;
+        }
+        /* :enabled 앞에 작성하면 :enabled에 의해 덮어쓰기 당함
+            따라서, :focus를 뒤로 작성해서 적용하기 */
+    </style>
+</head>
+<body>
+    <button>누르시오</button>
+    <br>
+    <input type="checkbox" name="hobby" value="game">
+    <label>게임</label>
+    <input type="checkbox" name="hobby" value="exercise">
+    <label>운동</label>
+    <input type="checkbox" name="hobby" value="read">
+    <label>독서</label>
+
+    <input type="text" />
+    <input type="text" />
+    <input type="text" disabled="disabled"/>
+</body>
+</html>

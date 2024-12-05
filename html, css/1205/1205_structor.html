@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 일반 구조 선택자 :: 
+            :first-child, :last-child, 
+            :nth-child(num), :nth-last-child(num) */
+
+        /* child(자손)의 기준이, 부모한테 맞춰져있다. */
+        div>p:first-child{  /* div의 자손인 첫번째 태그가 p 태그일 때 */
+            color: blue;
+        }
+        div>p:last-child{   /* div의 자손인 마지막 태그가 p 태그일 때 */
+            color: red;
+        }
+        div>p:nth-child(3){ /* div의 3번째 자손인 태그가 p 태그일 때 */
+            color: green;
+        }
+        div>p:nth-last-child(2){    
+            /* div의 뒤에서 2번째 자손 태그가 p 태그일 때*/
+            color:orange;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1st span 태그</span>
+        <p>1st 태그</p>
+        <p>2nd 태그</p>
+        <p>3rd 태그</p>
+        <p>4th 태그</p>
+        <p>5th 태그</p>
+        <span>last span 태그</span>
+    </div>
+</body>
+</html>

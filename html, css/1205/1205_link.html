@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 링크 선택자 :: href가 설정된 <a> 태그에서 주로 적용 */
+        /* :link, :visited */
+
+        /* :link :: href가 적용된 a 태그 선택 */
+        #naver:link{
+            color: yellowgreen;
+        }
+        #naver:active{
+            color: yellow;
+        }
+        /* :visited :: 하이퍼링크를 이미 방문한 a 태그 선택 */
+        #naver:visited{
+            color:green;
+        }
+
+        #daum:link{
+            color: skyblue;
+        }
+        #daum:active{
+            color: plum;
+        }
+        #daum:visited{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <a id="naver" href="https://www.naver.com/">네이버로 이동</a>    <br>
+    <a id="daum" href="https://www.daum.net/">다음으로 이동</a>
+</body>
+</html>
