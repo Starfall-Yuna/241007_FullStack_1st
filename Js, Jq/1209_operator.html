@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 산술연산자 :: +, -, *, /(몫), %(나머지)
+        // 대입연산자 :: = (rvalue(좌)를 lvalue(우)에 대입한다.)
+        //      복합 대입연산자 :: +=, -=, *=, /=, %=
+        // 비교연산자 :: <, >, <=, >=, ===(같다), !==(다르다)
+        console.log(1=="1")     // 값만 비교
+        console.log(1==="1")    // 값과 타입을 함께 비교
+        // 논리연산자 :: &&(그리고), ||(또한), !(~이 아닌)
+        // 삼항연산자 :: ? (조건문의 역할(if-else))
+        // (조건식) ? (조건식이 참일 때 할 것) : (조건식이 거짓일 때 할 것);
+
+        let num1=1;
+        let num2=2;
+        num1+num2!==3 ? alert("num1+num2!==3은 참입니다.") : alert("num1+num2!==3은 거짓입니다.");
+    
+        let tf = num1+num2!==3 ? 1: 0;
+            // "num1+num2!==3" 조건식의 참/거짓 여부에 따라서
+            // 1 또는 0이 tf에 삽입
+    </script>
+</body>
+</html>

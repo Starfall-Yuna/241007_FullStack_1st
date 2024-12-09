@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 동위(형제) 선택자 :: ~(복수선택), +(단일선택) */
+        /* 상태 선택자 :: checked, :focus, :enabled, :disabled */
+        [type="radio"]:checked ~ label{
+            color: blue;
+        }
+        [type="text"]:disabled{
+            background-color: gray;
+        }
+        [type="text"]:enabled{
+            background-color:bisque;
+            color: brown;
+        }
+        [type="text"]:focus{
+            background-color: burlywood;
+            font-weight: bold;
+        }
+
+        /* 링크 선택자 :: :link, :visited */
+        [href]:link{
+            color: red;
+        }
+        [href]:visited{
+            color:chocolate;
+        }
+
+        /* 문자 선택자 -> ::first-letter, ::first-line, ::before, ::after */
+        #lorem::first-line{
+            color:blueviolet;
+        }
+        #lorem::first-letter{
+            font-size:200%;
+            color: blue;
+        }
+        #lorem::before{
+            content: "(본문 시작)"
+        }
+        #lorem::after{
+            content: "(본문 끝)"
+        }
+
+        /* 부정 선택자 :: :not() */
+        [type="text"]:not([id]){
+            border: 2px solid rgb(151, 0, 167);
+        }
+    </style>
+</head>
+<body>
+    <h3>성별</h3>
+    <input type="radio" name="gender" value="male"/>
+    <label>남성</label>
+    <input type="radio" name="gender" value="female"/>
+    <label>여성</label>
+    <br>
+
+    <input type="text" id="content"/>   <br>
+    <input type="text" />   <br>
+    <input type="text" disabled="disabled"/>
+    <br>
+
+    <a href="https://www.google.co.kr">구글로 이동</a>
+    <br>
+
+    <div id="lorem">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius impedit nesciunt neque odio provident perspiciatis excepturi laudantium minus ab sequi soluta nisi dignissimos, deleniti quod hic est totam sit porro.
+    </div>
+</body> 
+</html>

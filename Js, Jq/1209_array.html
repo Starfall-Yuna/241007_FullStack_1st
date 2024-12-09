@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열 :: "여러 값을 하나의 이름으로 저장하는 공간"
+        //      js 같은 경우에는, 각 인덱스 공간에 대해 자료형 제약X
+        //      배열 이름 + "이 변수가 배열이다." 만 지정해도 문법 오류X
+
+        // "something이라는 변수는 배열이다." 선언
+        let something = [];
+
+        // 배열의 임의의 공간을 선택해서 값 저장
+        something[100]=" ";      // 수행 시, something 크기: 101개
+        for(let i=0;i<5;i++){
+            something[i]=i;
+        }
+
+        // push() 함수를 통해서, 뒤에서부터 순차적 삽입
+        something.push(1001);
+        something.push("ㅇㅅㅇ");
+        something.push(true);
+
+        document.write(something);
+    </script>
+</body>
+</html>

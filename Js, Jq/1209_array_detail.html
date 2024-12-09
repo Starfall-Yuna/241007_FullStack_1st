@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열 초기화 방법
+        // 1. let/const 배열명 = [값1, 값2, ...];
+        let fruits=["apple", "banana", "lemon"];
+        // 2. let/const 배열명 = Array(값1, 값2, ...);
+        let number=Array(11, 22, 33, 44, 55);
+        // 3. let/const 배열명 = new Array(값1, 값2, ...);
+        let phone=new Array("IPhone", "Galaxy");
+
+        document.write(`${fruits}<br>`);
+        document.write(`${number}<br>`);
+        document.write(`${phone}<br><br>`);
+
+        // delete :: 배열에서 값 삭제
+        delete phone[0];
+        document.write(phone);
+    </script>
+</body>
+</html>

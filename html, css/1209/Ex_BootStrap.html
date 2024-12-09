@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* 언어 카드 스타일 별도 지정 */
+        .container{
+            text-align:center;
+            margin: 0 auto;
+        }
+        .container.text-center{
+            margin: 30px;
+        }
+        .row{
+            width: 80%;
+            margin: 0 auto;     /* .row 태그 중앙정렬 */
+        }
+        .card{
+            display: inline-block;
+        }
+        .card > img{
+            height: 300px;
+        }
+
+        /* 캐러셀 영역 스타일 */
+        .carousel-item.active > a > img{
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+
+<!-- 언어 카드 영역 -->
+<div class="container">
+    <h3>Language</h3>
+    <hr>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFGvfXnNyB1HacT6EgBLYkRwBXnPa9GSYd_zjyWtDbzw&s" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="https://www.w3schools.com/html/default.asp" class="btn btn-primary">Go to Learn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="https://www.w3schools.com/css/default.asp" class="btn btn-primary">Go to Learn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://velog.velcdn.com/images/sk9663/post/43251ec8-a7dd-4099-9153-e1c16e3a116f/image.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="https://www.w3schools.com/js/default.asp" class="btn btn-primary">Go to Learn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="https://www.tcpschool.com/c/intro" class="btn btn-primary">Go to Learn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-java-60-1174953.png?f=webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="https://www.tcpschool.com/java/intro" class="btn btn-primary">Go to Learn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="https://www.tcpschool.com/python/intro" class="btn btn-primary">Go to Learn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+<br>
+<br>
+
+<!-- 구직사이트 나열 (캐러셀) -->
+<div class="container">
+    <h3>JobSite</h3>
+    <hr>
+
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a href="https://www.saramin.co.kr/zf_user/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMLUxkNoDHnKw70xG121ZBkZjY2SqW8ysh39SDEDo4&s.png" class="d-block w-100" alt="...">
+                <h3>사람인: 이동하기</h3>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://www.jobkorea.co.kr/OnePick/JobList?Ord=GcmCodeAmtDesc&utm_source=google&utm_medium=cpc&utm_campaign=pc_%EB%B8%8C%EB%9E%9C%EB%93%9C_tcpa&utm_content=pc_%EB%B8%8C%EB%9E%9C%EB%93%9C_tcpa_%EC%9B%90%ED%94%BD%EA%B3%B5%EA%B3%A0(%EA%B8%B0%EC%88%A0)&utm_term=%EC%9E%A1%20%EC%BD%94%EB%A6%AC%EC%95%84">
+                <img src="https://i.namu.wiki/i/mBZrOj-o-FbZ24oQYZjgf1xzhJgHulvcxlp3D6pECe1EIr96RBYQSHo19M_o35tqA8TgcSvzRQqDa1vvQD6NPw.svg" class="d-block w-100" alt="...">
+                <h3>잡코리아: 이동하기</h3>
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://www.jobplanet.co.kr/job">
+                <img src="https://jpassets.jobplanet.co.kr/production/uploads/material/media/7444/jp_og.png" class="d-block w-100" alt="...">
+                <h3>잡플래닛: 이동하기</h3>
+            </a>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</div>
+</body>
+</html>

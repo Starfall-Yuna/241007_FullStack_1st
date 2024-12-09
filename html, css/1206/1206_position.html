@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+            width: 100px;
+            height: 100px;
+        }
+        .first{
+            background-color: red;
+            position: absolute;
+            top: 20px;
+            left:200px;
+        }
+        .second{
+            background-color:green;
+            position: fixed;
+            top: 50px;
+            left: 50px;
+        }
+        .third{background-color: blue;}
+        /* position 속성 :: 요소 배치를 어떤 방식으로 할 것인가 */
+        /* 디폴트값: static */
+        
+        /* static(정적) :: 웹사이트의 시작점으로부터, 요소를 그냥 붙이는 방식(좌표 배정X) */
+        /* relative(상대적) :: 디폴트(static) 위치로부터, 좌표를 임의로 이동시키는 방법 */
+        .relative{
+            position: relative;
+            left: 50px;
+            top: 50px;
+        }
+        /* fixed(고정적) :: 스크롤의 영향X 반드시 브라우저 상의 지정된 위치에 있음 */
+        /* absolute(절대적) :: 부모 태그의 시작점으로부터, 지정된 위치 고정 */
+    </style>
+</head>
+<body>
+    <div class="relative">
+        <div class="first div"></div>
+        <div class="second div"></div>
+        <div class="third div"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

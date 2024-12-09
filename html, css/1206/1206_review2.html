@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 일반 구조 선택자 :: 부모 태그를 중심으로 선택 */
+        /* first-child, last-child, nth-child(num), nth-last-child(num) */
+        div>p:first-child{ /* div의 첫번째 자식이 p 태그인 경우, */
+            color: red;
+        }
+        div>p:nth-child(4){
+            color: orange;
+        }
+
+        /* 형태 구조 선택자 :: 자식의 태그에 중심을 맞추어 선택 */
+        /* first-of-type, last-of-type, nth-of-type(num), nth-last-of-type(num) */
+        div>p:last-of-type{
+            background-color:coral;
+        }
+        div>p:nth-last-of-type(3){
+            background-color:burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>span 태그</span>
+        <p>1st</p>
+        <p>2nd</p>
+        <p>3rd</p>
+        <p>4th</p>
+        <p>5th</p>
+        <span>span 태그</span>
+    </div>
+</body>
+</html>

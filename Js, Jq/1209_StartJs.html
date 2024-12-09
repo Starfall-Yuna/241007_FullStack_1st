@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS :: 화면 디자인 역할 */
+    </style>
+</head>
+<body>
+    <!-- HTML :: 화면 요소 구성 역할 -->
+    <p id="hello">안녕하세요.</p>
+
+    <script>
+        // JavaScript :: 화면 동작(이벤트) 담당 (Java 전혀 무관)
+
+        // 한줄짜리 주석
+        /* 
+            여러줄 주석
+        */
+
+        // 자바스크립트 코드 적용(2) :: 내부 Js, 외부 Js
+        // 1. 내부 Js :: html 파일 안에 <script> 태그 사용해서 정의
+        // 2. 외부 Js :: .js 파일 별도로 작성해서 html에 적용
+
+        // * 출력문 (4가지)
+        // 1) 경고문 출력 :: alert()
+        alert("경고창이 출력됩니다.");
+
+        // 2) 콘솔 상에서 출력 :: console.log()
+        console.log("콘솔창에서 출력됩니다.");
+
+        // 3) html 페이지 출력 :: document.write() -> 디버깅 용도
+        // html 페이지 로드가 완료된 다음에, 마지막에 출력 
+        document.write("html 페이지에 출력됩니다.");
+
+        // 4) html 태그의 텍스트 대체 :: innerHTML
+        let pTag=document.getElementById("hello");
+            // Js 변수 pTag를 html 상의 #hello와 연결함
+            // "JavaScript 상에서의 #hello 태그를 pTag 변수가 <대변>한다."
+        pTag.innerHTML="이 구문은 JavaScript에 의해서 변경되었습니다.";
+        // document.getElementById("hello").innerHTML = "text";
+    </script>
+</body>
+</html>

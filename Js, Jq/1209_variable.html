@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 변수(let, var) :: "변할 수 있는 숫자", 값을 저장하는 공간
+        // 상수(const) :: 값 변경이 불가능, 값을 저장하는 공간
+
+        // var과 let 차이 :: 변수의 생명주기와 연관O
+        // var :: 같은 이름의 변수는 반드시 메모리가 하나 할당 (중복 선언X)
+        // let :: 선언하는 위치가 다를 시 같은 이름의 변수여도 메모리가 다르게 할당
+        //      (선언하는 블럭이 다르면, 중복 선언O)
+
+        let name="이유나"
+        const gender="여자"
+        const blood='A'       // js에서는, 문자/문자열 따로 두지X
+        let age=26
+        let tf=true;
+
+        // 자료형 :: string, number, boolean
+        console.log("\"이유나\" typeof 결과: " + typeof("이유나"));
+            // "이유나" typeof 결과 :: [결과물]
+        console.log("'A' typeof 결과: "+ typeof(blood));
+        console.log("age 변수의 typeof 결과: "+typeof(age));
+        console.log("100.001의 typeof 결과: "+typeof(100.001));
+        console.log("tf 변수의 typeof 결과: "+typeof(tf));
+    </script>
+</body>
+</html>

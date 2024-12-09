@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 반응형 웹앱 :: 뷰포트의 크기에 따라서 페이지 표현을 달리하는 것 */
+        /* 미디어 쿼리 :: 반응형 웹앱 */
+        /* 
+        조건식 :: max-width(), min-width(), max-height(), min-height()
+        @media screen and (브라우저 크기에 대한 조건식){
+            선택자{
+                속성명: 속성값; ...
+            }
+        } 
+        */
+    </style>
+</head>
+<body>
+    <!-- picture 태그 :: media 속성의 조건에 따라 표시되는 그림 다름 -->
+    <!-- <source> 태그로 사진 여러개를 올리고, 뷰포트에 따라 달리 표시 -->
+    <picture>
+        <source srcset="https://i.namu.wiki/i/KcqDuQYTxNpUcLIMZTg28QXse0XiWx1G7K68kYYCo1GuhoHmhB_V8Qe9odGGt0BH9-0nQZTN53WXTNpDmwVfWQ.svg"
+            alt="C" media="(max-width: 700px)">
+            <!-- 너비가 700px 이하일 때, C언어 로고 사진 설정 -->
+        <source srcset="https://images.velog.io/images/codemcd/post/13ef824a-175d-41aa-a766-a649bd855a2e/Java_Logo.png"
+            alt="Java" media="(max-width: 1000px)">
+            <!-- 너비가 1000px 이하일 때, Java 로고 사진 설정 -->
+
+        <!-- 기본값 이미지랑 "사진의 너비/높이 설정"은 <img> 태그에서 함 -->
+        <img src="https://velog.velcdn.com/images/seonghae/post/5d9c4da0-2ec1-41de-ae36-e79822412c75/image.png" 
+            alt="oracle" style="width: 300px; height: 300px;">
+    </picture>
+</body>
+</html>
