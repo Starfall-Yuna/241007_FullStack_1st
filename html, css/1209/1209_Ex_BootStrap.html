@@ -9,6 +9,20 @@
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <style>
+        .navbar.navbar-expand-lg{
+            box-shadow: 0 10px 20px darkgray;
+        }
+        .nav-item > .nav-link.disabled{
+            color: lightgray;
+            margin-left: 50px;
+        }
+        .navbar-brand{
+            font-size:200%;
+        }
+        .mb-lg-0{
+            margin: 0 auto;
+        }
+      
         /* 언어 카드 스타일 별도 지정 */
         .container{
             text-align:center;
@@ -35,44 +49,54 @@
     </style>
 </head>
 <body>
+    <!-- 네비게이션 바 -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+      <div class="container-fluid">
+          <div>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEX///8AAAD8/PzS0tJfX1/a2trd3d1aWlqCgoJYWFiFhYXPz89iYmJcXFzf39/5+fkwMDCMjIzr6+vy8vIODg6YmJhJSUkICAhqampxcXGnp6ceHh6Dg4PIyMiKioooKCg9PT27u7uhoaG3t7d6enoWFhYjIyPCwsKlpaXN5d5bAAAE0ElEQVR4nO2c6UIqMQyFZ8YFVBBZFEFFUVze/wmv4NYlSpouGbjn+8u0JjbtyaTtVBUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdofx0+x6Nh9pm5GP+bTecKltSC6G9RczbVPysKx/eNQ2Jgs3hofTgbY1GTioTZba5mSga3k41DYnAzf77qEdpPsoGHaQ1gfa9iRncGE5eNFoG5QcJ0hvte1Jz+m+B2ljr6TtD9LRvLta3AWY6QRpl3rm/HExfB2nMjGOzxT64Y7dwgnSM/+J887ml0krZKT/bekTt4ntYO0/8DPI/ZSmimj6hqnnvDZntoOn3gNj49eO8iRteqatJ7xGW+V+Zf58qOti3zaWV5G4t9o8e783E+sB1UB1HKxZi42zkvpBeuT0ygyNDDSHjik8D7cG6ZnbbV8rUHuuJdS67+HmpP77vTuG73MxvfEcTjxDao5CM+R+4nWsEqiEgytOO0ZOuvC7Lu9i44doXbMKSvYAvVCPDKZ+38VFw1tk3jniNOTkpNUx0XvhuejKBNtBRk66xl9sygZqQzl4zGvrBOBvj50Tf6FgAkfNQd4Ibs9JvyADtZSL8hANKUFRgdpJYv9WYhxsbLl/+WtQqFEsMRf9VK1mz0FGTmpCzcUCCVzEHKxCS1BUoGYXjU6Ug4394kTkpDYKokE5yA5RptybUIF6kjFQyVSNP4JcuTcpLBriVO0Lu+mE04QK1Gxv/TEysYEt9yblRCNOJjbIdpyKiUbsHKzcbdEptxkpGuldjJOJDUFyb1JENCJlYoN8W5QUjcC//jekTIQ6uL0E9TuUi0kDNVom1gTLvUnmBK5LdB/sYOS2KOVi2D/pD6gQYW7CmDxbHVwoWUEy9LsOH8G4IF1DSH+qczhXbsdTgYOCnNTlyCsyXgnsoHhwOxYdQ3P6kHSxdA15kPRCkGQMRTmpTb4xTDIP409BZZyHKVaxZtu2aBErfiWBHkYHaVY9TJHTxAZp7qJUdF4ak5OuyZ6Xli9B2eR/t6hi3w/T56QZChlR7/i2kt2E/eVC7/hRdZqoIC1Y3JfX2m7tRkFBWnSDRiwazuGKkL9ZtF4qrnlHyH3xjVKZaCQuQeXdYJOIhiP393wLVQ4sCAI1aZ00/6ETgWhI5V5pDzhcNJoX61H2yXytffwq2EWh3CuexQidi7ISlOp5msAzUfZjzB0n5TNRQYEqknvtc21VSAInkXsdmbChEjj6wrK9krL27sd+3xqXEojsZkE8JpH7a7/rYquoie8iNUCCIB35DipdSPAD1Z+JkhLUnR+i6Y1n4SdwvtZJ5H7uOah3McgNVH8MJTnpsh0h+oGti8Q8tLdF71mdOlqhe0HPFg3/voUsJ7Xmbk/7ep4ZqP6VGVlOai412vcPKzNQiUnmzChunz/7efp3SN+5/KikdYitLnEJav5ZnWvJBzPGr8PFG7mVJy9Bjeer3uyx9d+Qck7m3+hPqdQk2LtvOf/dF0z272tQ0aegWs/lvgepcw4ncFt0J7A93MMgrZb7HqTVwNwYJa807zxvhoev2sbkYfbtYEtS6PR8CsaE/XGe3WM0n13PnlryvScAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsPgH/2Mp9c1TI8gAAAAASUVORK5CYII="
+              width="50" height="50" alt="conding">
+            <a class="navbar-brand" href="#">LPG</a>
+            <span class="nav-item">
+            <a class="nav-link disabled">Learning Programming Grammer</a>
+        </span>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item col">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown col">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Language
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#html">HTML</a></li>
+                <li><a class="dropdown-item" href="#css">CSS</a></li>
+                <li><a class="dropdown-item" href="#js">JavaScript</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#c">C</a></li>
+                <li><a class="dropdown-item" href="#java">Java</a></li>
+                <li><a class="dropdown-item" href="#python">Python</a></li>
+              </ul>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#job">JobSite</a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#qa">Q&A</a>
+            </li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-<br>
-<br>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <br><br>
 
 <!-- 언어 카드 영역 -->
 <div class="container">
