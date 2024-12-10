@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 입력받기 (이름, 나이, 성별(boolean))
+        let name=prompt("이름을 입력해주세요");
+        let age=Number(prompt("나이를 입력해주세요"));
+        let gender=confirm("성별이 어떻게 되시나요? (확인은 남성, 취소는 여성)");
+        let ok=confirm("이대로 진행하시겠습니까?");
+
+        // 2. 2030여성지원 과정 참여가 가능한지를 판별하는 함수 작성
+        // (20대 또는 30대 여성 -> 나이와 성별을 판별)
+        function okClass(a, g){
+            if((20<=a && a<40) && g===false){   // 참가 가능 조건
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        // 3. 입력값에 대한 참가 가능 여부 출력
+        document.write(`${name}님, 환영합니다.<br>`);
+        if(ok===true && okClass(age, gender)===true){
+            document.write("축하드립니다. 과정 참여자로 선발되셨습니다!!!");
+        }
+        else{
+            document.write("누락된 정보가 있거나, 과정 참여자로 선발될 수 없습니다.");
+        }
+    </script>
+</body>
+</html>

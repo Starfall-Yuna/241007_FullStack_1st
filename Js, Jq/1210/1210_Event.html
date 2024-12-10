@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para">클릭하기 전입니다.</p>
+    <button id="btn">클릭하시오</button>    <br>
+    <button onclick="console.log('클릭함')">클릭하세요(2)</button>  <br>
+    <a href="#" onmouseenter="a_click()">클릭하세요</a>
+
+    <script>
+        // 이벤트 삽입 (요소의 속성을 통해 이벤트 삽입)
+        function a_click(){
+            alert("a 태그 위에 있습니다.");
+
+            let para=document.getElementById("para");
+            if(para.style.display==="none"){
+                para.style.display="block";
+            }
+            else{
+                para.style.display="none";
+            }
+        }
+
+        // 이벤트 삽입 (이벤트 리스너 활용)
+        // 1. 함수를 통하여, 버튼 클릭할 시의 행위 정의
+        function clicker(){
+            document.getElementById("para").innerHTML="클릭한 후입니다.";
+            alert("버튼을 클릭하였습니다.");
+        }
+
+        // 2. 이벤트 리스너 사용 ::
+        //      이벤트가 발생했을 때, 그 처리를 담당하는 함수
+        // 1) 버튼 태그를 특정 변수와 연결
+        let button_tag=document.getElementById("btn");
+        // 2) 이벤트 리스너 통해서, 요소에 이벤트 적용
+        //      button_tag에 clicker() 함수 적용 (단일 명령문 사용X)
+        button_tag.addEventListener("click", clicker);
+    </script>
+</body>
+</html>

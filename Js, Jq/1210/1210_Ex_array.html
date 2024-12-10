@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 숫자 2개를 입력받기
+        let num1=Number(prompt("첫번째 숫자를 입력해주시오."));
+        let num2=Number(prompt("두번째 숫자를 입력해주시오."));
+
+        // 두 숫자에 대한 사칙연산 결과 5개를 배열에 삽입
+        let calc=[
+            num1+num2,
+            num1-num2,
+            num1*num2,
+            num1/num2,
+            num1%num2
+        ];
+        // let calc2=[];
+        // calc2.push(num1+num2);
+        // calc2.push(num1-num2);
+        // calc2.push(num1*num2);
+        // calc2.push(num1/num2);
+        // calc2.push(num1%num2);
+
+        // 3. 연산 결과들을 html 창에 순차적으로 출력
+        let oper=['+', '-', '*', '/', '%'];
+        for(let i=0;i<5;i++){
+            document.write(`${num1}${oper[i]}${num2}=${calc[i]}<br>`);
+        }
+    </script>
+</body>
+</html>

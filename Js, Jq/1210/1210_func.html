@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수 :: "명령문을 묶어둔 것" (코드 흐름 변동)
+        // * 예제 :: 계산기 프로그램 (함수 활용하여 사칙연산 수행)
+        // function [함수이름](매개변수명, ...){
+        //      명령문들;
+        //}
+
+        // 1. 숫자 2개를 입력받기
+        let num1=Number(prompt("첫번째 숫자를 입력해주시오."));
+        let num2=Number(prompt("두번째 숫자를 입력해주시오."));
+
+        // 2-1. 함수를 통하여 사칙연산 수행 및 즉시 출력(5개 함수 사용)
+        document.write(`덧셈 결과: ${add(num1, num2)}<br>`);
+        document.write(`뺄셈 결과: ${sub(num1, num2)}<br>`);
+        document.write(`곱셈 결과: ${mul(num1, num2)}<br>`);
+        document.write(`나눗셈 결과: ${div(num1, num2)}<br>`);
+        document.write(`나머지 결과: ${rest(num1, num2)}<br>`);
+        // *, /, %에 대한 출력문이랑 함수 구현 수행하기
+
+        function add(n1, n2){   //  매개변수 이름은 임의로 지어도 됩니다.
+            return n1+n2;       // 덧셈 결과 반환
+        }
+        function sub(n1, n2){
+            return n1-n2;
+        }
+        function mul(n1, n2){
+            return n1*n2
+        }
+        function div(n1, n2){
+            return n1/n2;
+        }
+        function rest(n1, n2){
+            return n1%n2;
+        }
+
+    </script>
+</body>
+</html>

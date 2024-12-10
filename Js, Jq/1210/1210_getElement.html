@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="1" class="first tag"></p>
+    <p id="2" class="second tag"></p>
+    <p id="3" class="third tag"></p>
+    <p id="4" class="fourth tag"></p>
+
+    <script>
+        // getElement 함수 :: Js에서, html 요소를 당겨올 수 있는 함수
+        // id/class/tag/name 값을 통해서 요소 당겨오기 가능 
+
+        // getElementById() -> 단일값으로 주어짐 (변수에 저장 가능)
+        // 나머지           -> 복수값으로 주어질 수도 있음 (배열에 저장)
+
+        document.getElementById("1").innerHTML="첫번째 태그입니다.";
+        document.getElementsByTagName("p")[1].innerHTML="태그입니다.";
+        document.getElementsByClassName("fourth")[0].innerHTML="fourth 태그입니다.";
+    </script>
+</body>
+</html>

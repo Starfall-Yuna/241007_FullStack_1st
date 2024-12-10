@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">텍스트</p>
+    <script>
+        // 자바스크립트 적용법 :: 내부 Js, 외부 Js
+        // about:blank 링크 접속 -> 빈 페이지 뜸
+
+        // 출력문 :: alert(), console.log(), document.write(), innerHTML
+        alert("안녕하세요.");
+        console.log("콘솔 상으로 출력");
+        document.write("html 상에서 출력");
+        document.getElementById("text").innerHTML="변경되었습니다.";
+
+        // 변수(let, var)   -> 값 수정O
+        // 상수(const)      -> 초기값 수정X
+        // 변수/상수는 삽입되는 값에 따라서 자료형이 결정 (유동적)
+        let num=5;
+        const hello="안녕하세요.";
+
+        // 자료형 :: number(숫자), string(문자열), boolean(불리언)
+        // 정수/실수 구분X,     문자/문자열 구분X
+        // 강제 형변환 :: Number(), String(), Boolean()
+
+        // 입력문 :: prompt(), confirm()
+        let name = prompt("성함을 알려주시길 바랍니다.");  
+            // 두번째 항목에 기본값 삽입O
+        let ok = confirm("페이지를 이동하겠습니까?");
+            // 선택지 :: 확인(true) / 취소(false)
+        
+        
+        // 배열 :: "여러 값을 하나의 이름으로 저장할 수 있는 공간"
+        // int arr[5];      -> arr[7] 접근 (에러)
+        // double num[3] = {1.11, 2.22, 3.33};
+
+        // JavaScript에서는, 각 배열의 원소들 자료형을 다르게 설정O
+        // 배열의 크기를 명시X
+        // let introduce = [];
+        // let introduce = ["이유나", 26, "여자"];    초기화 방법(생략)
+
+        let introduce = [];         // introduce가 배열임을 선언
+        introduce[50] = 'A';        // 50번째 인덱스에 'A' 삽입
+        introduce.push('+');        // introduct 배열의 마지막에 '+' 삽입
+        introduce.push(170);
+        delete introduce[51];       // 51번째 인덱스 값을 없앴음 (공간은 있음)
+        // introduce 배열의 size? 53개
+    </script>
+</body>
+</html>

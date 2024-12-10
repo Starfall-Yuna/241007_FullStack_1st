@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+</body>
+    <p id="content">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo sed quia optio aperiam ipsa, laboriosam officia. Nesciunt fugiat odit, aliquam eum omnis sint consequuntur, possimus consectetur esse incidunt doloremque laboriosam!
+    </p>
+    <button id="change_btn">색상 변경</button>  <br>
+    <button id="hide_btn">본문 숨기기</button>
+
+    <script>
+        // JQuery :: JavaScript 문법을 보다 편리하게 작성할 수 있게 해줌
+        // $ :: "~에 접근한다."
+        // $(선택자).동작함수() {}      => 선택자는 css에서와 비슷
+
+        $(document).ready(function(){ // 문서가 로드 완료되면, 아래 함수 내용을 시행하라.
+            console.log("jq를 사용하고 있습니다.");
+        })
+
+        // p 태그의 디자인 설정
+        $(document).ready(function(){   // "문서가 로드된 상태에서,"
+            $("#content").css("color", "blue");    
+            // #content 요소의 색상을 파랑으로 변경
+        })
+
+        // 버튼에 대한 이벤트 삽입 (글자색, 배경색 변경)
+        $(document).ready(function(){
+            $("#change_btn").click(function(){  // #change_btn을 클릭할 시
+                // #content 요소의 색상 변경하라.
+                alert("Lorem 본문의 색상이 변경됩니다");
+                $("#content")
+                    .css("color", "red")
+                    .css("background-color", "bisque");
+            }) 
+        })
+
+        // 버튼을 누르면 본문이 숨겨지는 이벤트 삽입
+        $(document).ready(function(){
+            $("#hide_btn").click(function(){    // #hide_btn을 클릭할 시
+                // #content 요소를 숨기기
+                $("#content").hide();
+            })
+        })
+    </script>
+</body>
+</html>
