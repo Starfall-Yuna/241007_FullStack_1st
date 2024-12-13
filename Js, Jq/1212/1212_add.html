@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #content{
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button id="add_button">요소 더하기</button>    <br>
+    <button id="before_button">요소 더하기(앞에)</button>   <br>
+    <button id="after_button">요소 더하기(뒤에)</button>    <br>
+    <div id="content"></div>
+
+    <script>
+        // 요소를 직접 html 상에 더함
+        // append() :: 지정된 태그 안에서, 뒤에서부터 요소 더함 ("권장")
+        // prepend() :: 지정된 태그 안에서, 앞에서부터 요소 더함
+        // after() :: 지정된 태그 앞에서 요소 더함
+        //      (지정된 태그에 가까울수록 최근에 생성된 요소임)
+        // before() :: 지정된 태그 뒤에서 요소 더함
+        //      (지정된 태그에 가까울수록 최근에 생성된 요소임)
+        
+        $(function(){
+            // $("#add_button").click(function(){
+            //     $("#content").append("<h3>요소를 추가하였습니다.</h3><br>");
+            // })
+
+            let num=1;
+            // $("#add_button").click(function(){
+            //     $("#content").append(`${num++}번째 요소입니다.<br>`);
+            //     // append() 수행 -> num+1 수행
+            // })
+            $("#add_button").click(function(){
+                $("#content").prepend(`${num++}번째 요소입니다.<br>`);
+                // prepend() 수행 -> num+1 수행
+            })
+
+            let bf=1;
+            $("#before_button").click(function(){
+                // #content가 시작하기 바로 앞에서 추가가 된다.
+                $("#content").before(`${bf++}번째 :: 앞에 추가됩니다.<br>`);
+            })
+
+            let af=1;
+            $("#after_button").click(function(){
+                $("#content").after(`${af++}번째 :: 뒤에 추가됩니다.<br>`);
+            })
+        })
+    </script>
+</body>
+</html>

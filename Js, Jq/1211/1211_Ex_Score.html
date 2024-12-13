@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 정보처리기사 성적 및 합불 결과에 대한 클래스 생성하기
+        class score{
+            //  생성자 :: 
+            // 해당 객체의 score[] (5개 과목의 성적), average(평균) 초기화
+            // good은 임의로 true값으로 초기화
+            constructor(sc){    // sc는 배열 형태로 받을 예정
+                // score[] 멤버 변수 초기화
+                this.score=[];
+                this.average=0;
+                for(let i=0;i<5;i++){
+                    // score[0] = 1과목 점수, score[1] = 2과목 점수, ...
+                    this.score[i]=sc[i];
+                }
+
+                // 평균값 average값 초기화
+                for(let i=0;i<5;i++){
+                    this.average += this.score[i];   // average값 :: 총합
+                }
+                this.average/=5;        // 평균값으로 만들기 위해 나누어줌
+            
+                // 합불 결과 good 초기화
+                this.good=true;
+            }
+            // 멤버 변수 :: score[], average, good
+            goodScore(){
+                // score[]에 대한 과락 여부 -> 과락이 되면 good false로 바꿈
+                for(let i=0;i<5;i++){
+                    if(this.score[i]<40){    // 과락 여부
+                        this.good=false;
+                    }
+                }
+                // 평균값에 대한 불합격 여부
+                if(this.average<60){
+                    this.good=false;
+                } 
+
+                if(this.good===true){
+                    document.write("정보처리기사 시험에 합격하였습니다.");
+                }
+                else{
+                    document.write("정보처리기사 시험에 불합격하였습니다.");
+                }
+            }
+        }
+
+        // 5개의 과목 성적을 js 상 입력
+        let sc=[];
+        for(let i=0;i<5;i++){
+            sc[i]=Number(prompt(`${i+1}과목의 점수를 입력하시오.`));
+        }
+        // 입력값에 대한 객체 생성 (배열값 전송)
+        let p1 = new score(sc);
+        // 함수 수행하여, 합불 결과 출력
+        p1.goodScore();
+    </script>
+</body>
+</html>

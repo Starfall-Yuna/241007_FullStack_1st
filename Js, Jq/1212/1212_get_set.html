@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+</body>
+    <label id="name"><b>이름</b></label>
+    <input type="text" id="name_input"> <br>
+    <label id="school">소속</label>
+    <input type="text" id="school_input">
+
+    <script>
+        // DOM 조작 :: DOM(document의 준말)의 요소 조작
+        // get :: "불러오기"    -> text(), html(), val(), attr(속성명)
+        // set :: "설정하기"    
+        //      -> text(설정값), html(설정값), val(설정값), attr(속성명, 설정값)
+        
+        // 함수 이름은 동일하지만 값이 몇개가 들어가는지에 따라서
+        //  get 함수인지 set 함수인지 구별
+        $(function(){       
+            $("#name").click(function(){    // p를 클릭하면
+                alert("입력란: "+$("#name").text());  // p의 텍스트를 경고창 출력
+                console.log("html 코드: "+$("#name").html());
+            })
+            $("#name_input").dblclick(function(){
+                alert("입력값: "+$("#name_input").val());
+                console.log("입력 타입: "+$("#name_input").attr("type"));
+                // attr() :: 특정 태그의 속성값을 불러오기
+            })
+
+            $("#school").click(function(){      // #school 클릭할 시
+                alert("항목이 소속->학교 소속으로 변경됩니다.");
+                // $("#school").text("학교 소속");        
+                    // #school 텍스트를 "학교 소속"으로 수정
+                $("#school").html("<b><i>학교 소속</i></b>");
+            })
+            $("#school_input").dblclick(function(){
+                alert("기본값으로 설정됩니다.");
+                $("#school_input").val("0000학교");
+                $("#school_input").attr("disabled", "disabled");
+                $("#school_input").attr("style", "background-color: gray");
+                $("#school_input").css("color", "red");
+            })
+        })
+    </script>
+</body>
+</html>

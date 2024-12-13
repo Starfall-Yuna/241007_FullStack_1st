@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h3>jquery를 통하여 불러온 값입니다.</h3>
+    <div id="content"></div>
+
+    <script>
+        // ajax() 함수 내장
+        $.ajax({
+            // 통신을 보낼 양식 작성 (open())
+            // url (어떤 파일을 불러올지)
+            // method (어떤 방식으로 통신을 진행할지 (GET/POST))
+            // dataType (읽어들이는 파일 형식) -> 파일 형식에 맞게 읽어들이기 위해 명시
+            url: "https://starfall-yuna.github.io/upgraded-octo-waddle/인적사.json",
+            method: "GET",
+            dataType: "json",
+
+            // * 통신 성공 여부 (성공했을 시 수행할 함수 명시)
+            success: function(data){    // url 파일의 데이터를 받아줄 필요O
+                // data :: {
+                //  "name": "Lee",
+                //  "gender": "여성"
+                //  }
+                $("#content").html(data["name"]+"<br>"+data["gender"]);
+                // div 안 :: Lee<br>여성
+            },
+            // * 통신 성공 여부 (실패했을 시 수행할 함수 명시)
+            error: function(j, t, e){  
+             console.log(j);     // jqxhr :: jquery에 있는 xhr 객체
+                console.log(t);     // statusText :: xhr 객체의 상태값 중 하나, 통신의 결과값
+                console.log(e);     // errorThrow :: new Error()를 통하여 생성된 에러 객체
+            }
+
+        })    // jquery에 내장된 ajax() 불러오기 (객체를 인수로 전달)
+
+        // $(function(){
+
+        // })
+    </script>
+</body>
+</html>

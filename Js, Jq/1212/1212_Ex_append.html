@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h3>할 일 목록</h3>
+    <button id="add_todo">할일 추가</button>
+    <button id="delete_todo">할일 초기화</button>
+    <ul id="todo"></ul>
+
+    <script>
+        $(function(){
+            let n=1;
+            // [할일 추가] 버튼을 누르면,
+            $("#add_todo").click(function(){
+                // 입력창을 띄워 할일 입력 받기
+                let todo=prompt("할일을 입력하세요");
+                // 입력된 할일을 append 함수를 통하여 화면에 출력한다.
+                $("#todo").append(`<li id="tag${n}" style="display:none;">${todo}</li>`);
+                $(`#tag${n}`).fadeIn(1000);     // (display) none-> block 전환 효과
+                n++;
+            })
+
+            let d=1;
+            // [할일 초기화] 버튼을 누르면,
+            $("#delete_todo").click(function(){
+                //  현재까지 생성된 할일을 모두 제거하여라 (remove 활용)
+                // $("#todo").remove();     -> <ul> 태그 삭제 :: 요소 추가 불가능
+                // $("li").remove();
+                // $("#todo").empty();
+            })
+        })
+    </script>
+</body>
+</html>

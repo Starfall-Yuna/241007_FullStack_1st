@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button id="clone_btn">요소 복사</button>
+    <div id="content">
+        <p id="pTag">첫번째 요소입니다.</p>
+    </div>
+
+    <script>
+        // clone() :: 선택한 요소 복사 (붙여넣기X)
+        $(function(){
+            $("#clone_btn").click(function(){
+                // clone() 활용할 시,
+                // 복사할 태그의 정보를 저장할 변수 선언 필요
+                // tag_info 변수에 #pTag 정보 저장
+                let tag_info=$("#pTag").clone();
+                console.log(tag_info);
+                $("#content").append(tag_info); // 붙여넣기는 add 함수를 통해서
+            })
+        })
+    </script>
+</body>
+</html>

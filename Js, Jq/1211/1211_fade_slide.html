@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button id="hide">숨기기</button>
+    <button id="show">나타내기</button>
+    <button id="toggle">토글</button>
+    <p id="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quidem maiores quibusdam blanditiis illo, est sit, pariatur sapiente eius distinctio ad corporis architecto! Eveniet fugit architecto vel minus doloremque voluptate?
+    </p>
+    <script>
+        // fade 함수 :: fadeIn(), fadeOut(), fadeToggle()
+        // $(function(){
+        //     $("#hide").click(function(){
+        //         $("#content").fadeOut(2000);
+        //     })
+        //     $("#show").click(function(){
+        //         $("#content").fadeIn(2000);
+        //     })
+        //     $("#toggle").click(function(){
+        //         $("#content").fadeToggle(2000);
+        //     })
+        // })
+
+        // slide함수 :: slideUp(), slideDown(), slideToggle()
+        $(function(){
+            $("#hide").click(function(){
+                $("#content").slideUp(500);
+            })
+            $("#show").click(function(){
+                $("#content").slideDown(500);
+            })
+            $("#toggle").click(function(){
+                $("#content").slideToggle(500);
+            })
+        })
+    </script>
+</body>
+</html>

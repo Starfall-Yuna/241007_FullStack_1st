@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button id="ani_start">애니메이션 시작</button>
+    <br>
+    <br>
+    <div id="nemo"></div>
+
+    <script>
+        $(function(){
+            // div에 대한 초기 설정
+            $("#nemo").css("width", "100px");
+            $("#nemo").css("height", "100px");
+            $("#nemo").css("background-color", "green");
+
+            $("#ani_start").click(function(){
+                $("#nemo").animate({width:"300px"}, "slow");
+                $("#nemo").animate({height:"300px"}, "slow");
+            })
+        })
+    </script>
+</body>
+</html>

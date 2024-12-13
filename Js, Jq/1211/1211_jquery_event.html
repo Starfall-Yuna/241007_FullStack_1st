@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button id="hide_btn">숨기기</button>
+    <button id="show_btn">나타내기</button>
+    <button id="toggle_btn">토글</button>
+    <p id="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ab sequi laborum obcaecati odit ex tenetur soluta quam quis quos, asperiores vitae impedit illo, voluptas facilis. Autem maiores laboriosam architecto.
+    </p>
+    <script>
+        // $ :: "~에 접근한다."
+        // $(선택자).동작함수(function(){})
+
+        // $(document).ready() 축약 가능
+        $(function(){
+            $("#content").css("color", "blue");
+        })
+
+        // #hide_btn을 클릭했을 시, #content 내용 숨기기
+        $(function(){       // 문서가 로드 완료될 시
+            $("#hide_btn").click(function(){    // #hide_btn을 클릭하면
+                $("#content").hide(1000);   // #content를 1초동안 숨김 시행
+            })
+            $("#show_btn").click(function(){
+                $("#content").show(1000);
+            })
+            $("#toggle_btn").click(function(){
+                $("#content").toggle(1000);
+            })
+
+            // dblclick() :: 두번 클릭할 때
+            $("#content").dblclick(function(){  // #content를 두번 클릭할 시
+                alert("Lorem 본문입니다.");     // 경고창 출력
+            })
+
+            // mouseenter() :: 마우스가 요소 안으로 들어갔을 때
+            // $("#content").mouseenter(function(){    // #content에 마우스 올릴 시
+            //     $("#content").css("color", "red");  // #content의 색상 변경
+            // })
+            // $("#content").mouseleave(function(){
+            //     $("#content").css("color", "blue");
+            // })
+            $("#content").hover(function(){ // mouseenter 경우
+                $("#content").css("color", "red");
+            }, function(){  // mouseleave 경우
+                $("#content").css("color", "blue");
+            })
+        })  
+    </script>
+</body>
+</html>

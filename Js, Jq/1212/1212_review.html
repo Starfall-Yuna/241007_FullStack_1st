@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button id="fade_btn">fade효과</button>
+    <button id="slide_btn">slide효과</button>
+    <button id="ani_start">애니메이션 효과</button>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos magnam neque consectetur omnis quidem nostrum laboriosam dolorum architecto modi facilis consequuntur, voluptate officiis velit ipsam rem, sit ea a reiciendis.
+    </p>
+
+    <script>
+        $(function(){
+            // 연쇄 (chaining) :: 동작을 연달아 발생시키는 것
+            // 콜백 함수 :: 동작 함수 수행한 후, "후처리"를 하는 함수
+            //      (동작 함수의 "마지막 항"에 작성되는 경우가 일반적)
+            $("#fade_btn").click(function(){
+                // 3초 숨기고 3초 나타내기
+                $("p").fadeOut(3000, () => {
+                    alert("fade 효과가 진행중입니다.");     // 권장X (충돌O)
+                }).fadeIn(3000, () => {
+                    alert("fade 효과가 진행되었습니다.");
+                }); 
+            })
+
+            $("#slide_btn").click(function(){
+                $("p").slideUp(500).slideDown(500); // 0.5초 숨기고 0.5초 나타내기
+            })
+
+            $("#ani_start").click(function(){
+                $("p").animate({width:"300px"}, "slow");
+            })
+        })
+    </script>
+</body>
+</html>

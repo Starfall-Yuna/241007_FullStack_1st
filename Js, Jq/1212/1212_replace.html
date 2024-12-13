@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p id="add_p">추가로 작성한 내용입니다.</p>
+    <button id="all_btn">replaceAll</button>
+    <button id="with_btn">replaceWith</button>
+    <p class="first tag" id="replace">대체될 내용입니다.</p>
+    <p class="second tag"></p>
+    <p class="third tag"></p>
+
+    <script>
+        // 요소 재배치/대체 :: replaceAll(), replaceWith()
+        // replaceAll
+        $(function(){
+            $("#all_btn").click(function(){
+                // $() :: 대체할 내용을 선택
+                // replaceAll() -> 대체할 위치 선택
+                $("#replace").replaceAll(".tag");
+                    // #replace 내용을 .tag 태그들에 재배치하라.
+            })
+            $("#with_btn").click(function(){
+                $("#add_p").replaceWith($(".tag"));   
+                    // $() 선택자 구문 사용
+                // #add_p의 위치에 .tag들의 내용을 붙여넣는다.
+            })
+        })
+    </script>
+</body>
+</html>

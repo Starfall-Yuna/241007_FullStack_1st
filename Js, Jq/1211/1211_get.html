@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p id="text">이것은 <b>본문</b>입니다.</p>
+    <input type="text" id="input">
+    <button id="check">입력값 확인</button>
+
+    <script>
+        // DOM :: "Document" 줄임말
+        // DOM 조작 :: (html 형식으로 작성되는) Document 조작
+
+        // get :: html에 대한 정보 jquery로 불러오기
+        // text() :: 선택한 요소의 텍스트를 불러오기
+        // html() :: 선택한 요소의 내부를 불러오기 (텍스트+태그)
+        // val()  :: 
+        $(function(){
+            $("p").click(function(){
+                // p 태그의 텍스트를 alert로 출력
+                alert(`선택된 태그의 텍스트: ${$("#text").text()}`);
+                console.log($("#text").html());
+            })
+
+            // 버튼을 누르면, 입력값을 확인하는 이벤트 생성
+            $("#check").click(function(){
+                alert(`현재 입력값: ${$("#input").val()}`);
+            })
+        })
+    </script>
+</body>
+</html>

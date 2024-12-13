@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <label id="name">이름</label>
+    <input type="text" id="name_input">
+    <br>
+    <button id="add_btn">요소 추가</button>
+    <button id="delete_btn">요소 삭제</button>
+    <div id="content"></div>
+
+    <script>
+        // DOM 조작 :: DOM(Document) html 문서에 대한 조작어
+        // 요소 추가 :: append(), prepend(), after(), before()
+        //      append() 사용을 많이 함
+        // 요소 삭제 :: remove(), empty()   -> 태그 공간 삭제 여부
+        let index=1;
+        $(function(){
+            // get, set 구분 요인 :: text(), text(설정값)
+            $("#name").dblclick(function(){ // <label> 더블클릭했을 때
+                alert(`텍스트값: ${$("#name").text()}`);
+                alert("<이름(한국어)>로 텍스트가 변경됩니다.");
+                $("#name").html("<b>이름(한국어)</b>");
+                // <label> 안의 내용을 <b>이름(한국어)</b>로 설정
+            })
+            $("#name_input").dblclick(function(){
+                alert(`해당 입력란의 타입은 ${$("#name_input").attr("type")}입니다.`);
+                alert("기본값으로 설정이 됩니다.");
+                $("#name_input").val("000");
+            })
+
+            $("#add_btn").click(function(){
+                $("#content").append(`${index++}번째 요소입니다.<br>`);
+                // "n번째 요소입니다." 출력 -> index+1 수행
+            })
+            $("#delete_btn").click(function(){
+                // $("#content").remove();     
+                // 공간 자체가 사라져서 append() 먹히지 않음
+                $("#content").empty();
+                // 공간은 살아있고 공간의 내용만 비워짐
+                index=1;
+            })
+        })
+    </script>
+</body>
+</html>

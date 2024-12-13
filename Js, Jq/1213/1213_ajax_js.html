@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>아래는 웹에 배포된 json 파일 내용을 불러온 값입니다.</h3>
+    <div id="info"></div>   <!-- json 파일 표현할 공간 -->
+
+    <script>
+        // Ajax :: 비동기식 자바스크립트 (Async Javascript and XML)
+
+        // XMLHttpRequest 객체 생성/사용 -> 통신 시도
+        // 1. XMLHttpRequest 객체 생성
+        const xhr = new XMLHttpRequest();   // new 키워드 객체 생성
+        //  xhr이라는 객체를 통해서 통신 양식 작성, 통신 시도
+
+        // 2. xhr 멤버에 함수 정의(초기값)
+        xhr.onload = function(){
+            // 통신 성공한 경우
+            // 첫번째 조건문 :: 통신할 준비가 되었는지
+            // 두번째 조건문 :: 통신을 하였을 때 성공하였는지
+            if(this.readyState === 4 && this.status === 200){
+                // 응답 데이터 :: {} 데이터 도착 -> this.responseText
+                // this.responseText를 통해서 응답 데이터(인적사항.json) 접근
+
+                // 객체[key값]
+                let para=document.getElementById("info");
+                para.textContent = JSON.parse(this.responseText)["name"];
+                // div 태그(para)의 텍스트 영역에 대하여
+                //  통신을 시도하고 응답으로 받아낸 JSON 파일을 읽어들인 값을 놓는다.
+                // this.response :: 응답 데이터(여기에서는 인적사항.json)
+                // JSON.parse() :: Json 파일 형태를 읽어들이는 함수
+                para.innerHTML += " ";
+                para.innerHTML += JSON.parse(this.responseText)["gender"];
+            }
+            else{   // 통신 실패한 경우
+                alert(error);
+            }
+        }
+
+        // 3. 통신을 시도하는 구문 작성
+        // GET :: 일반적인 통신
+        // POST :: 보안이 강화된 통신
+        xhr.open("GET", "https://starfall-yuna.github.io/upgraded-octo-waddle/인적사항.json"); // 통신 어떻게 보낼지 작성
+        xhr.send();     // open() 내용을 기반으로, 통신 시도
+
+
+        // 실질적인 실행 순서 :: 1. 객체생성 -> 3. 통신 시도 -> 2. 통신 후처리 
+        // ajax 통신의 형식은 유지하되, 
+        //      1) 통신 시도 후 후처리 -> 통신 성공/실패 후처리
+        //      2) 통신 전송 방법 -> open() 정의할 내용
+        // 위 내용만 용도에 맞게 적절히 수정하면 ajax 통신은 원활하게 될 것
+    </script>
+</body>
+</html>

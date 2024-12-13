@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Fetch를 활용한 Ajax 통신 시도</h3>
+    <div id="content"></div>
+    <!--
+    <div>
+        Lee<br>
+        여성
+    </div>
+    -->
+
+    <script>
+        // fetch()를 활용한 ajax 통신 시도
+
+        // fetch 인수 :: 어느 데이터에 접근할 것인가
+        // 즉시 통신 시도 (통신 요청(request) 전송)
+
+        // () => {} :: ES6, "콜백 함수"
+        // () :: 매개변수가 하나일 때는, () 생략 가능
+        fetch("https://starfall-yuna.github.io/upgraded-octo-waddle/인적사항.json")
+            .then(response => {
+                // 응답에 대한 처리 정의(함수 정의) -> 응답 성공 여부 확인
+                // 1) 통신에 대해서 성공하였는지 확인
+                if(!response.ok){   // 통신 응답에 대해 ok 사인이 떨어지지 않았을 때
+                    alert("통신에 실패하였습니다.");
+                    throw new Error('400 or 500 Error');    // Error() 실행
+                    // Error 객체의 message값 :: '400 or 500 Error'
+                    // Error 객체 생성 + 에러 처리를 위한 catch() 구문 이동
+                }
+                return response.json();     
+                // 통신이 성공하면, JSON.parse() 수행하여 데이터 처리 넘김
+            })
+            .then(data => {     // data :: "인적사항.json" 파일이 불러옴
+                // data :: {
+                //  "name": "Lee",
+                //  "gender": "여성"
+                //  }
+                let para = document.getElementById("content");  
+                para.textContent = data["name"];    // "Lee"
+                para.innerHTML += '<br>';              // "Lee" + '<br>'
+                    // para.innerHTML = (para 태그의 기존 내용) + '<br>'
+                para.innerHTML += data["gender"];   // "Lee<br>" + "여성"
+            })
+            .catch(error => {      
+                // error :: 에러 발생시 생성된 Error 객체 전달 받음
+                console.log(error.message);
+            })
+    </script>
+</body>
+</html>

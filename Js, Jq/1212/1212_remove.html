@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button id="add_btn">요소 추가</button>
+    <button id="delete_btn">요소 삭제</button>
+    <div id="content"></div>
+
+    <script>
+        // remove() :: 지정된 태그의 "공간 삭제" -> "없앤다"
+        // empty() :: 지정된 태그의 "공간 비움"
+
+        let num=1;
+        $(function(){
+            $("#add_btn").click(function(){
+                $("#content").append(`<p>${num++}번째 요소 추가</p>`);
+                // "num번째 요소 추가" 문구 출력 => num+1
+            })
+            $("#delete_btn").click(function(){
+                num=1;
+                // $("p").remove();
+                $("#content").empty();
+            })
+        })
+    </script>
+</body>
+</html>

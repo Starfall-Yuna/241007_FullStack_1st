@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button>숨기기</button>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit cum fugit dolores animi, dignissimos nobis, dolore error nam optio rerum ullam ab esse porro possimus ipsum. Dicta soluta tempore sapiente.
+    </p>
+
+    <script>
+        // 콜백 함수 :: 
+        //  이벤트 처리를 한 이후에, 후처리를 어떻게 할것인지 정의하는 함수
+        //  !!! 거의 모든 동작 함수의 마지막 항에서 정의 !!!
+        //  마지막 항이 두번째가 될수도, 세번째가 될수도 있음
+
+        $(function(){
+            // 버튼을 누르면 본문이 사라지게 하는 이벤트 생성
+            $("button").click(function(){
+                // () :: 매개변수 나열 (생략O)
+                // {} :: 콜백 함수 정의
+                $("p").hide(1000, () => {
+                    alert("본문을 숨겼습니다");
+                });
+
+                // hide() 함수 본문 숨기기 -> alert() 실행
+            })
+        })
+    </script>
+</body>
+</html>

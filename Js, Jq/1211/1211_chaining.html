@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p id="tag">Click me</p>
+
+    <script>
+        // 이벤트 연쇄 작용 (chaining)
+        $(function(){
+            $("#tag").click(function(){
+                // 글씨 색상 변경하고 fade 효과로 숨겼다가 나타나는 것
+                // 1. 글씨 색상 변경
+                // 2. fade로 항목 숨기기
+                // 3. fade로 항목 나타내기
+                // $("#tag").css("color", "blue");
+                // $("#tag").fadeOut(3000);
+                // $("#tag").fadeIn(3000);
+
+                $("#tag").css("color", "blue").fadeOut(3000).fadeIn(3000);
+            })
+        })
+    </script>
+</body>
+</html>
