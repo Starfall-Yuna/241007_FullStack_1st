@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <input type="radio" id="E" name="EI" value="E">
+    <label for="E">외향적(E)</label>
+    <input type="radio" id="I" name="EI" value="I">
+    <label for="I">내향적(I)</label>
+    <br>
+    <input type="radio" id="S" name="SN" value="S">
+    <label for="S">현실형(S)</label>
+    <input type="radio" id="N" name="SN" value="N">
+    <label for="N">직관형(N)</label>
+    <br>
+    <input type="radio" id="T" name="TF" value="T">
+    <label for="T">이성형(T)</label>
+    <input type="radio" id="F" name="TF" value="F">
+    <label for="F">감정형(F)</label>
+    <br>
+    <input type="radio" id="P" name="PJ" value="P">
+    <label for="P">즉흥형(P)</label>
+    <input type="radio" id="J" name="PJ" value="J">
+    <label for="J">계획형(J)</label>
+    <br>
+    <button id="submit">제출</button>
+    <div id="result"></div>     <!-- 결과 출력하기 위한 공간 -->
+
+    <script>
+        // "제출 버튼을 누르면" -> 클릭 이벤트 필요
+        $(function(){
+            $("#submit").click(function(){
+                // 선택지에 따른 mbti 문자 조합
+                let mbti="";    // mbti 문자 조합 결과 저장
+                if(document.getElementById("E").checked === true){mbti += "E";}
+                else if(document.getElementById("I").checked === true){mbti += "I";}
+
+                if(document.getElementById("S").checked === true){mbti += "S";}
+                else if(document.getElementById("N").checked === true){mbti += "N";}
+
+                if(document.getElementById("T").checked === true){mbti += "T";}
+                else if(document.getElementById("F").checked === true){mbti += "F";}
+
+                if(document.getElementById("P").checked === true){mbti += "P";}
+                else if(document.getElementById("J").checked === true){mbti += "J";}
+                // mbti 변수에 대한 글자 개수가 4개 이하인 경우 발생
+
+                $.ajax({
+                    url: "https://starfall-yuna.github.io/fuzzy-invention/mbti.json",
+                    method: "GET",
+                    dataType: "json",
+
+                    success:function(data){
+                        let result = document.getElementById("result");
+                        if(data[mbti]){ // data[mbti] 값이 어떻게든 존재할 때
+                            result.innerHTML = mbti+": "+data[mbti];
+                        }
+                        else{
+                            result.innerHTML = "선택지를 다시 선택해주십시오.";
+                        }
+                    },
+                    error:function(j, t, e){
+                        alert("mbti 정보 불러오기를 실패했습니다.");
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

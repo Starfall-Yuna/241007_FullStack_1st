@@ -1,0 +1,9 @@
+
+public class if_switch {
+	public static void main(String args[]) {
+		// 조건문 :: "특정 조건에 만족하면", 정해진 명령어를 수행하게 하는 구문
+		
+		// 2개의 숫자를 입력을 받고
+		// 숫자 비교 결과에 대해서 출력을 < or > or == 중 하나 출력
+	}
+}

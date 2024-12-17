@@ -1,0 +1,9 @@
+
+public class Ex_10869 {
+	public static void main(String args[]) {
+		// 문제 10869번 사칙연산
+		
+		// 1. 2개의 자연수에 대한 입력	-> 정수 입력문 2개 작성
+		
+	}
+}
