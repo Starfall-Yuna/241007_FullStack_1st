@@ -1,8 +1,0 @@
-
-public class if_switch {
-	public static void main(String args[]) {
-		// 조건문 :: "특정 조건에 만족하면", 정해진 명령어를 수행하게 하는 구문
-		
-		// 
-	}
-}

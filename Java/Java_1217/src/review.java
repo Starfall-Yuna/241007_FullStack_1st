@@ -36,14 +36,5 @@ public class review {	// 파일명과 동일해야함
 		char c = sc.next().charAt(0);	// charAt(i) :: 문자열 중 i번째 요소 접근
 			// 문자열(문자 1개 이상) 입력값 중 가장 먼저 입력된 문자에만 접근
 			// 입력값("Hello") -> c = 'H' ("ello"는 입력문 종료와 동시에 사라짐)
-	
-	
-		System.out.println(a+b);
-		System.out.println(a-b);
-		System.out.println(a*b);
-		System.out.println(a/b);
-		System.out.println(a%b);
-	
-	
 	}
 }
