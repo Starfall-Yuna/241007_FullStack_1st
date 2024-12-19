@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class review {
-	public static void main(String_Func args[]) {
+	public static void main(String args[]) {
 		// 연산자 :: (Java_1217) operator.java 참고
 		
 		// 조건문 :: if-else if-else문, switch문
