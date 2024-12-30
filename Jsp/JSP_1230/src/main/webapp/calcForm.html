@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>계산기 JSP</h2>
+	<hr>
+	<form method="post" action="/JSP_1230/calc">
+		<!-- 첫번째 숫자 입력 -->
+		<input type="text" name="n1" size="10">
+		
+		<!-- 연산자 입력 -->
+		<select name="op">
+			<option> + </option>
+			<option> - </option>
+			<option> * </option>
+			<option> / </option>
+		</select>
+		
+		<!-- 두번째 숫자 입력 -->
+		<input type="text" name="n2" size="10">
+		
+		<input type="submit" value="실행">
+		<!-- 실행 버튼을 누르면, n1/op/n2의 값을 가지고 지정된 페이지 이동 -->
+	</form>
+</body>
+</html>
+
+
