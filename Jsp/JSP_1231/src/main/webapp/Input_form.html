@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>반려동물 정보 입력</h3>
+	<form action="/JSP_1231/print" method="get">
+		<label>이름 </label>
+		<input type="text" name="n" >	<br>
+		
+		<label>성별</label>
+		<input type="radio" name="g" value="남자">
+		<label>남자</label>
+		<input type="radio" name="g" value="여자">
+		<label>여자</label>	<br>
+		
+		<input type="submit" value="GET실행">
+	</form>
+	<hr>
+	<h3>인적사항 정보 입력</h3>
+	<form action="/JSP_1231/print" method="post">
+		<label>이름 </label>
+		<input type="text" name="n" >	<br>
+		
+		<label>성별</label>
+		<input type="radio" name="g" value="남성">
+		<label>남성</label>
+		<input type="radio" name="g" value="여성">
+		<label>여성</label>	<br>
+		
+		<label>취미</label>
+		<input type="checkbox" name="h" value="운동">
+		<label>운동</label>
+		<input type="checkbox" name="h" value="독서">
+		<label>독서</label>
+		<input type="checkbox" name="h" value="게임">
+		<label>게임</label>
+		<input type="checkbox" name="h" value="명상">
+		<label>명상</label>	<br>
+		
+		<input type="submit" value="POST실행">
+	</form>
+</body>
+</html>
+
+
+
