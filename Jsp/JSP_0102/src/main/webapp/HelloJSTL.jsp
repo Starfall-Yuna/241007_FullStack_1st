@@ -20,8 +20,11 @@
 	
 	<%-- 단일 조건문(if) :: (test)조건식 --%>
 	<%-- ${} :: 논리식에 대한 true/false 판별 가능 --%>
-	<c:if test="${ 1+2 != 4 }">
+	<c:if test="${ 1+2!=4 }">
 		<p>"1+2!=4"는 참입니다.</p>
+	</c:if>
+	<c:if test="${ 1+2==4 }">			<%-- else if가 아닌 순수 if --%>
+		<p>"1+2!=4"는 거짓입니다.</p>
 	</c:if>
 	
 	<%-- if - else if - else --%>
@@ -31,7 +34,7 @@
 		<%-- otherwise :: else와 유사, 조건식 필요X + 가장 마지막에 작성 --%>
 		<c:when test="${ 10>10 }"> 좌측의 값이 큽니다. </c:when>
 		<c:when test="${ 10==10 }"> 두 값이 동일합니다. </c:when>
-		<c:otherwise>우측의 값이 큽니다.</c:otherwise>
+		<c:otherwise>우측의 값이 큽니다.</c:otherwise>		<%-- else와 동일, test 속성 없음 --%>
 	</c:choose>
 	<br>
 	
