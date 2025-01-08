@@ -1,0 +1,49 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.1'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.yse.dev'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+// 의존성 :: 외부에 있는 라이브러리를 해당 프로젝트 포함시키는 역할
+dependencies {
+ 	// lombok :: 자바 코드 간결하게 작성하는 데에 도움 
+ 	//		(ex) get/set 함수 -> @getter/@setter 2개만으로 get/set 함수 자동 생성 
+ 	// Thymeleaf :: 서버에 있는 데이터 가져오는 용도 (html 파일 상에서 작성)
+ 	// Spring Web :: 웹프로젝트 작성에 필수적
+ 	// Spring data Jpa :: 스프링부트 - DB 연동 목적
+ 	// MySQL Driver :: mysql 가동
+ 	
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	
+	 implementation group: 'org.javassist', name: 'javassist', version: '3.15.0-GA'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
