@@ -1,0 +1,11 @@
+* /book/edit/{id} 접속 or 상세페이지의 "수정" 버튼 누름
+- @Controller에서 GET 방식의 "/book/edit/{id}" 링크와 연결된 함수 찾기
+- 사용자에게 표시할 Model, View 정보 담을 공간(mav) 마련 
+- id값을 전달하면서, service에 있는 edit() 함수 실행
+	<BookService>에서의 실행 내용
+	- 전달받은 id값을 책 번호로 갖는 데이터 검색
+	- 검색한 결과를 Book 엔티티(DB의 Book테이블) 형식대로 임의의 객체(b)에 저장
+	- BookFactory() 함수 즉시 실행하여, 검색 결과를 바로 반환
+- Service 함수에서 저장한 데이터를 beDTO라는 이름으로 받아옴
+- mav에 사용자에게 보여줄 데이터(beDTO)와 화면 정보(book/edit.html)를 저장
+- mav를 반환하면서, 저장된 데이터를 기반으로 사용자에게 보여줌

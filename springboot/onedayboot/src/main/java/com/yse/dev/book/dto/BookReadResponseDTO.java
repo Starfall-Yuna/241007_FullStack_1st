@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Getter
 public class BookReadResponseDTO {
 	// Book 엔티티(테이블) 내용 :: 4가지(제목, 가격, id번호, 데이터 생성시간)
+	// DB와 소통하기 위해 있는 엔티티(X), 프로젝트에서 사용자에게 정보를 표시하기 위해 있는 DTO(O)
 	private Integer bookId;
 	private String title;
 	private Integer price;

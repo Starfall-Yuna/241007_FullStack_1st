@@ -1,0 +1,42 @@
+<!-- 타임리프(thymeleaf) :: 서버에 있는 데이터를 뷰에서 가져오는 데에 활용 -->
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>책 상세</title>
+	</head>
+	<body>
+		<h1>책 상세</h1>
+		<p>
+			<!-- th : thymeleaf의 th -->
+			<!-- :text :: 불러온 데이터를 해당 태그의 텍스트로 설정 -->
+			<label>제목</label> : <span th:text="${bd.title}"></span>
+		</p>
+		<p>
+			<label>가격</label> : 
+			<span th:text="${#numbers.formatInteger(bd.price, 3, 'COMMA')}"></span>
+			<!-- bd.price 정보 형식 맞추기 (3자릿수 단위로 콤마 찍기) 
+				5000 데이터 	=> 5,000 형식 맞추기 -->
+		</p>
+		<p>
+			<label>입력일</label> : 
+			<span th:text="${#temporals.format(bd.insertDateTime, 'yyyy-MM-dd HH:mm')}"></span>
+		</p>
+		
+		<p>
+			<!-- /book/edit/[.html 파일에서 전달받은 책 데이터의 id값] -->
+			<!-- /book/edit/2로 접속할 때, id의 값은 2로 전달 -->
+			<a th:href="@{/book/edit/{id}(id=${bd.bookId})}" th:text="수정"></a>
+		</p>
+		
+		<!-- submit 버튼을 누르면, POST 형식으로 "/book/delete" 링크 접속 -->
+		<form method="POST" th:action="@{/book/delete}" th:object="${bd}">
+			<!-- bd에 담겨있는 내용 중 일부를 전송 (책 번호(DB 상 book_id)) -->
+			<input type="hidden" th:name="bookId" th:value="*{bookId}" />
+			<input type="submit" value="삭제"/>
+		</form>
+		<!-- * :: 상위 객체의 하위 속성을 표현할 때 (bd 객체의 bookId 멤버) -->
+	</body>
+</html>
+
+
+
+

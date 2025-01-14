@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>책 수정하기</title>
+	</head>
+	<body>
+		<!-- 데이터값(Model) :: be 이름으로 정보가 전달됨 -->
+		<!-- th:action의 id = be라는 책 데이터 중 bookId값만 불러옴 -->
+		<h1>책 수정하기</h1>
+		<form method="POST" th:object="${be}" th:action="@{/book/edit/{id}(id=*{bookId})}">
+			<p>
+				제목: <input type="text" name="title" th:value="*{title}" style="width:300px"/>
+			</p>
+			<p>
+				가격: <input type="text" name="price" th:value="*{price}" style="width:300px"/>
+			</p>
+			<p>
+				<input type="submit" value="저장" />
+			</p>
+		</form>
+		<!-- "저장" 버튼을 누르면, "/book/edit/{Id}" 동일한 링크로 접속 (POST 방식) 
+			컨트롤러에 @PostMapping 정의해줄 필요 -->
+	</body>
+</html>

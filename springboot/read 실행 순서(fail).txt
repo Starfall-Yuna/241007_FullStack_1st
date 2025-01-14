@@ -1,0 +1,18 @@
+* "localhost:8080/book/read/(임의의 숫자)" 접속
+- @Controller에서 GET 방식의 "/book/read/{id}" 링크와 연결된 함수 찾기
+- read() 함수 실행 이전에, 링크에 있는 id값을 매개변수로 받아오기
+- 사용자에게 보여줄 화면 정보(View)와 필요한 데이터(Model)를 저장할 공간(mav) 마련
+- id값을 전달하면서, service에 있는 read() 함수 실행
+	<BookService>에서의 수행 내용
+	- 전달받은 id값을 책 번호(book_id)의 값으로 갖는 데이터 검색	-> 실패
+	- orElseThrow()를 통해서, NoSuchElementException 예외처리가 발생함을 전달
+	(서비스의 함수 실행 종료, 컨트롤러로 이동)
+- try 실행 중단하고, catch(NoSuchElementException)으로 이동
+- mav에서, Http 상태값을 저장 ("접근할 수 없는 데이터")	-> 에러가 발생함을 브라우저 전달
+- mav에서, 필요한 데이터 값(Model)을 아래와 같이 전달
+   + "message"="책 정보가 없습니다."
+   + "location"="/book"
+- mav에서, 필요한 화면 정보(View)를, common/error/422.html로 설정
+- return mav;
+	=> 저장된 Model과 View를 기반으로, 사용자에게 화면 표시
+		(alert() 알림창 + "/book"으로의 링크 이동)

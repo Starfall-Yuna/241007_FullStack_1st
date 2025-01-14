@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Unprocessable Entity</title>
+	</head>
+	<body>
+		<!-- 서버로부터 전달받은 값을 불러오기 -->
+		<!-- 위 문법은 th:inline="javascript"로 설정하면서 사용O -->
+		<script type="text/javascript" th:inline="javascript">
+			alert(/*[[${message}]]*/ 'None Message');
+            location.href = /*[[${location}]]*/ '/';
+		</script>
+	</body>
+</html>

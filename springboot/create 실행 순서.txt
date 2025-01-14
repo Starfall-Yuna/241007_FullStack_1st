@@ -1,0 +1,17 @@
+* "localhost:8080/book/create" 접속
+- @Controller에서 GET 방식의 "/book/create" 링크와 연결된 함수 찾기
+- return "book/create"로 탬플릿에 있는 book/create.html 실행
+* create.html 페이지 내용 열람
+
+* 제목과 가격의 데이터를 입력하고, "저장" 버튼(method="post") 누름
+- @Controller에서 POST 방식의 "/book/create" 링크와 연결된 함수 찾기
+- 해당되는 함수의 매개변수(DTO)에, 사용자가 입력한 제목/가격 내용 저장
+- DTO 내용 전달하면서, service에 있는 insert() 함수 실행
+	<BookService>에서의 수행 내용
+	- 사용자의 입력을 기반으로, 책의 정보 입력 
+		(book_data 객체, DB와 맞닿아있는 Book 엔티티 내용대로)
+	- 위에서 입력한 book_data에 대해, 리포지토리를 통해 CRUD 수행
+		(save() -> "저장한다" -> sql문에서는 insert문 수행)
+	- 위에서 입력한 book_data의 id값을 반환
+- bookId 변수에 service 함수로부터 반환받은 id값을 저장
+- bookId를 통해서, read.html로 페이지 이동
