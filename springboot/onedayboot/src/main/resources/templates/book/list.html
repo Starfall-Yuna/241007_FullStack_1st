@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>책 목록</title>
+	</head>
+	<body>
+		<h1>책 목록</h1>
+		<table>
+			<tr>
+				<th>책 번호</th>
+				<th>책 제목</th>
+			</tr>
+			<!-- book_list 데이터 개수만큼 <tr> 태그 생성 -->
+			<!-- book_list의 각 요소에 대해서는 data라는 이름 접근 -->
+			<tr th:each="data: ${book_list}">	<!-- th:each -> 반복문 -->
+				<td th:text="${data.bookId}"></td>
+				<td th:text="${data.title}"></td>
+			</tr>
+		</table>
+		
+		<div>
+			<!-- i라는 변수에 대해, 1부터 시작하여 page_cnt까지 반복 -->
+			<span th:each="i: ${#numbers.sequence(1, page_cnt)}">
+            	<a th:href="@{/book/list(page=${i})}" th:text="${i}"></a>
+        	</span>
+		</div>
+	</body>
+</html>

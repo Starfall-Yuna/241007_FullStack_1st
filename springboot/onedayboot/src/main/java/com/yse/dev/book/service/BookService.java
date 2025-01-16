@@ -1,17 +1,26 @@
 package com.yse.dev.book.service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
 
 import com.yse.dev.book.dto.BookCreateDTO;
+import com.yse.dev.book.dto.BookEditDTO;
 import com.yse.dev.book.dto.BookEditResponseDTO;
+import com.yse.dev.book.dto.BookListResponseDTO;
 import com.yse.dev.book.dto.BookReadResponseDTO;
 import com.yse.dev.book.entity.Book;
 import com.yse.dev.book.entity.BookRepository;
 
 // 서비스 :: 기능과 관련한 실제 로직을 구현한 파일
-
 @Service
 public class BookService {
 	// 책 삽입/삭제/수정과 같은 기능 수행을 위하여 리포지토리(JpaRepository) 불러오기
@@ -82,7 +91,68 @@ public class BookService {
 		// DTO 객체 별도로 만들지 않고 함수 결과를 바로 반환
 		return BookEditResponseDTO.BookFactory(b);
 	}
+	
+	// update() :: DB의 내용을 수정하는 데에 활용	(프로젝트 내부 데이터 -> DB로)
+	// beDTO :: 수정할 데이터의 id값, 수정하고자 하는 제목/가격
+	public void update(BookEditDTO beDTO) throws NoSuchElementException{
+		// id값을 기반으로 검색 수행하여서, 검색 결과를 b에 저장 ("Book 테이블 형식을 갖추어" DB에 전송할 예정)
+		Book b = this.br.findById(beDTO.getBookId()).orElseThrow();
+		
+		// b :: 기존에 있는 책 데이터
+		// save_b :: DB에 새로 덮어씌울 데이터 갖게끔 구성 (DB에 저장할 값)
+		// fill() :: 사용자 입력값을 DB에 넘겨줄 객체 저장
+		Book save_b = beDTO.fill(b);
+		
+		// 수정할 데이터를 삽입 시도
+		this.br.save(save_b);
+	}
+	
+	// bookList() :: 여러 개의 책 데이터를 목록으로 출력하는 함수
+	// 매개변수 p :: 어느 페이지에 접근할 것인지에 대한 변수
+	public List<BookListResponseDTO> bookList(String t, Integer p, Integer MaxSize){
+		// DB 데이터 조회한 결과를 담아줄 공간 생성
+		List<Book> books;
+		int total;
+		
+		if(p == null) {
+			p = 0;
+		}else {
+			p -= 1;		// List의 각 요소 번호 :: [0] ~ [p-1]
+		}
+		
+		if(t == null) {		// 검색어가 없을 때	-> 전체 데이터 조회
+			Pageable pa = PageRequest.of(p, MaxSize, Direction.DESC, "insertDateTime");
+			books = this.br.findAll(pa).toList();	// toList() :: List로 변환
+		}
+		else {	// 사용자가 입력한 검색어(t)가 있을 때			
+			// 첫번째 매개변수 :: p	()
+			// 두번째 매개변수 :: pageSize	(한 페이지에 표현할 최대 데이터 개수)
+			// (ex) 20개의 데이터 조회	-> 한 페이지에 3개씩 하여 7페이지로 구성
+			Pageable pa = PageRequest.of(p, MaxSize);		// 목록의 페이지 구성
+			// sort 객체 :: "insertDateTime" 기점으로 내림차순 "정렬"할 수 있는 객체 
+			//		늦게 삽입한 데이터일수록 상위에 출력이 되게끔 구성
+			Sort s = Sort.by(Order.desc("insertDateTime"));
+			// s에 있는 내용을 참고하며, Pageable 객체 안에 있는 정렬 함수(getSort()) 수행 
+			pa.getSort().and(s);
+			// 사용자가 제시한 검색어(t)와 결과 페이지 구성(pa)을 참고하며, DB에 대해 검색 수행
+			// 그 검색 결과를 List(books)에 담아줌
+			books = this.br.findByTitleContains(t, pa);
+		}
+		
+		
+		// books :: 검색어를 제목으로 포함하고 있는 데이터 (늦게 삽입한 데이터가 상위로 정렬)
+		
+		return books
+				.stream()		// 데이터 생성 모드 변환
+				.map(book -> new BookListResponseDTO(book.getBookId(), book.getTitle()))
+					// books에 있는 데이터 하나하나에 대해서, DTO 형식으로 변환 (4종류의 데이터 중 2종류만 활용하게끔)
+				.collect(Collectors.toList());
+	}
 }
+
+
+
+
 
 
 

@@ -9,17 +9,19 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 
+// Validation :: "유효성", 특정 멤버에 대해서 값을 "제한"하는 규칙 설정
+
 @Getter		// 각 멤버의 get 함수 자동 생성
 @Setter		// 각 멤버의 set 함수 자동 생성
 public class BookEditDTO {
 	// bookId를 통해 데이터에 접근 & 접근한 데이터에 대해 입력값인 title, price 값으로 갱신
 	@NonNull
-	@Positive		// (Validation 소속) 값을 자연수로 제한함
+	@Positive		// (Validation 소속) 값을 자연수(양수)로 제한함
 	private Integer bookId;
 	
 	@NonNull		// (lombok 소속) null값을 갖지 않게 함				(null에 대해서만 제한)
 	@NotBlank		// (Validation 소속) 빈 값(null)에 대해서 취급하지 않음	
-					// 		(null, 빈값(""), 공백(" ")을 갖지 못함)
+					// 		(String값에 한하여)(null, 빈값(""), 공백(" ")을 갖지 못함)
 	private String title;
 	
 	@NonNull

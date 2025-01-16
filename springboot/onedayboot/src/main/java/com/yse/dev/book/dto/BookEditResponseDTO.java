@@ -16,6 +16,7 @@ public class BookEditResponseDTO {
 	private Integer price;
 	private LocalDateTime insertDateTime;
 	
+	// fromBook 함수는 EditResponseDTO 객체를 통하여 접근
 	public BookEditResponseDTO fromBook(Book b) {
 		this.bookId = b.getBookId();
 		this.title = b.getTitle();
@@ -24,7 +25,7 @@ public class BookEditResponseDTO {
 		return this;
 	}
 	
-	// static 함수 :: 객체를 생성하지 않고도 함수 접근O
+	// static 함수 :: 객체를 생성하지 않고도 클래스를 통해 직접 함수 접근O
 	public static BookEditResponseDTO BookFactory(Book b) {
 		BookEditResponseDTO beDTO = new BookEditResponseDTO();
 		beDTO.fromBook(b);

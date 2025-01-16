@@ -8,9 +8,11 @@
 		<h1>책 수정하기</h1>
 		<form method="POST" th:object="${be}" th:action="@{/book/edit/{id}(id=*{bookId})}">
 			<p>
+				<!-- 전달받은 모델값 be의 title값을 input에 미리 넣어둠 -->
 				제목: <input type="text" name="title" th:value="*{title}" style="width:300px"/>
 			</p>
 			<p>
+				<!-- 전달받은 모델값 be의 price값을 input에 미리 넣어둠 -->
 				가격: <input type="text" name="price" th:value="*{price}" style="width:300px"/>
 			</p>
 			<p>

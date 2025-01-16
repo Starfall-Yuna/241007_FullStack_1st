@@ -1,10 +1,14 @@
 package com.yse.dev.book;
 
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.yse.dev.book.dto.BookCreateDTO;
+import com.yse.dev.book.dto.BookEditDTO;
 import com.yse.dev.book.dto.BookEditResponseDTO;
+import com.yse.dev.book.dto.BookListResponseDTO;
 import com.yse.dev.book.dto.BookReadResponseDTO;
 import com.yse.dev.book.service.BookService;
 
@@ -54,7 +60,7 @@ public class BookController {
 		//		- 원하는 데이터 찾기 실패 :: NoSuchElementException 예외 발생	
 		//			-> try 실행을 중단하고, catch(NoSuchElementException) 이동
 		BookReadResponseDTO brDTO = this.bs.read(bookId);
-					
+								
 		// Model(데이터 구조, 실질적인 데이터) 정보 전송
 		// 검색에 성공한 책 데이터를 mav에 포함
 		mav.addObject("bd", brDTO);
@@ -70,6 +76,7 @@ public class BookController {
 	public String delete(@RequestParam("bookId") Integer bookId) throws NoSuchElementException{
 		// service에 있는 delete 기능 함수 수행
 		this.bs.delete(bookId);
+		
 		// 페이지 이동
 		return "redirect:/book/list";
 	}
@@ -84,7 +91,7 @@ public class BookController {
 		// 사용자에게 보여줄, 기존 책 데이터의 정보 불러오기
 		BookEditResponseDTO beDTO = this.bs.edit(bookId);
 		
-		// 사용자에게 보여줄 데이터와 화면 정보를 mav에 담아주기
+		// 사용자에게 보여줄 데이터(Model)와 화면 정보(View)를 mav에 담아주기
 		mav.addObject("be", beDTO);
 		mav.setViewName("book/edit");
 		
@@ -92,19 +99,83 @@ public class BookController {
 		return mav;
 	}
 	
+	// be :: edit.html에서 전달한 객체(th:object에 정의)의 내용
+	// @Validated를 통해서 각 값에 대한 유효성 검사		-> (적합X) err에 에러내용 가게끔 설정
+	@PostMapping("/book/edit/{bookId}")
+	public ModelAndView update(@Validated BookEditDTO be, Errors err) {
+		// 기능을 수행하기 이전, 에러가 발생했는지를 파악
+		// x :: 유효성 검사 중 오류가 생긴 내역
+		if(err.hasErrors()) {
+			String errorMessage = 
+					err.getFieldErrors()	// err에서 어떤 오류가 생겼는지에 대한 내용 가져오고
+					.stream()				// 스트림으로 전환 (데이터를 표현하는 모드)
+					.map(x -> x.getField() + " : " + x.getDefaultMessage())
+					.collect(Collectors.joining("\n"));		// 작성된 데이터에 "\n"를 합쳐서 문자열 입력 마무리
+			
+			// 메시지값과 경로값을 보내어서, error422() 함수 수행 (유효성 검사 실패에 대하여 임의로 예외 처리)
+			// 사용자에게 에러를 출력해서 보여주고 (errorMessage)
+			// 사용자가 다시 수정하게끔 "/book/edit/{id}" 링크로 이동
+			return this.error422(errorMessage, String.format("/book/edit/%s", be.getBookId()));
+		}
+		
+		// 사용자 입력을 기반으로, Service를 통해 DB 데이터 수정 진행
+		this.bs.update(be);
+		
+		// 사용자에게 보여줄 데이터와 화면 정보에 대해 저장할 공간 마련
+		ModelAndView mav = new ModelAndView();
+		
+		// View의 정보로, 페이지 이동 수행
+		// 컨트롤러의 @GetMapping("/book/read/{bookId}") 함수 수행
+		mav.setViewName(String.format("redirect:/book/read/%s", be.getBookId()));
+		
+		// mav에 지정된 경로로 사용자에게 페이지 이동
+		// url 링크 :: /book/edit/{id}(X)		/book/read/{id}(O)
+		return mav;
+	}
+	
+	// "/book/list"나 "/book"으로 접속할 시 아래 함수 수행
+	// title(사용자가 요청하는 검색어), page()
+	@GetMapping(value= {"/book/list", "/book"})
+	public ModelAndView bookList(
+			@RequestParam(name="title", required = false) String title, 
+			@RequestParam(name="page", required = false) Integer page) {
+		final int pageSize = 3;
+		
+		ModelAndView mav = new ModelAndView();
+		
+		// 사용자에게 표현할 화면 정보 담기 (list.html로 접속)
+		mav.setViewName("/book/list");
+		
+		// title에 대해 검색을 하고, 적절히 정렬한 목록을 반환하는 BookService 함수 수행
+		// 함수에 대한 결과값을 many_books로 저장
+		List<BookListResponseDTO> many_books = this.bs.bookList(title, page, pageSize);
+		
+		// 사용자에게 표현할 데이터 담기 (검색&정렬 완료된 리스트)
+		mav.addObject("book_list", many_books);
+		
+		return mav;
+	}
+	
 	// NoSuchElementException 예외 발생 시, 실행하던 것을 멈추고 해당 함수를 구동
-	// 컨트롤러에 있는 함수 실행하다가, 이 예외가 발생할 시 자동으로 이 함수를 실행
+	// 이 컨트롤러에 있는 함수 실행하다가, 이 예외가 발생할 시 자동으로 이 함수를 실행
 	//	"try - catch문 중복 작성 방지"
-	// 	현재로써는, read() edit() delete() 함수의 예외 처리를 진행
+	// 	현재로써는, read() edit() delete() 함수의 예외 처리를 진행 (throws NoSuchElementException이 있는 함수)
 	@ExceptionHandler(NoSuchElementException.class)
 	public ModelAndView noSuchElementExceptionHandler(NoSuchElementException ex) {
+		// message에는 "책 정보가 없습니다." 저장
+		// location에는 "/book/list" 저장
+		return this.error422("책 정보가 없습니다.", "/book/list");
+	}
+	
+	// 출력할 메시지 값과 이동할 경로 값을 매개변수로 받아서, 422.html 수행하는 함수
+	private ModelAndView error422(String m, String l) {
 		ModelAndView mav = new ModelAndView();
 		// "접근할 수 없는 데이터" 라는 상태값 설정
 		mav.setStatus(HttpStatus.UNPROCESSABLE_ENTITY);
 		// 사용자에게 표시할 메시지를 "message" 이름으로 값 전달
-		mav.addObject("message", "책 정보가 없습니다.");
+		mav.addObject("message", m);
 		// 위치 정보를 "location" 이름으로 값 전달
-		mav.addObject("location", "/book");
+		mav.addObject("location", l);
 		// common/error 폴더 안에 있는 422.html 화면 정보를 mav에 포함
 		mav.setViewName("common/error/422");
 		return mav;
