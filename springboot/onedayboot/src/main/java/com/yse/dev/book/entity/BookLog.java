@@ -26,6 +26,7 @@ import lombok.NoArgsConstructor;
 public class BookLog {
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 // 값이 자체적으로 생산 (값이 들어오는 순서대로 1,2,3 ... 들어감)
 	 private Integer bookLogId;
 	
 	 // N:1 관계 성립 (N: BookLog(댓글) / 1 : Book(책)) 	

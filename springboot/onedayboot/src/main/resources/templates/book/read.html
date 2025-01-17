@@ -2,6 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<title>책 상세</title>
+		<!-- jquery 구문을 해당 파일에 적용 -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	</head>
 	<body>
 		<h1>책 상세</h1>
@@ -22,7 +24,7 @@
 		</p>
 		
 		<p>
-			<!-- /book/edit/[.html 파일에서 전달받은 책 데이터의 id값] -->
+			<!-- /book/edit/[.html 파 일에서 전달받은 책 데이터의 id값] -->
 			<!-- /book/edit/2로 접속할 때, id의 값은 2로 전달 -->
 			<a th:href="@{/book/edit/{id}(id=${bd.bookId})}" th:text="수정"></a>
 		</p>
@@ -38,8 +40,66 @@
 		<p>
 			<a th:href="@{/book/list}" th:text="목록으로"></a>
 		</p>
+		
+		<div id="book_log"></div>
+		<!-- 댓글 입력하는 공간 작성 -->
+		<p>
+			<input type="text" id="booklog_comment" />
+			<input type="text" id="booklog_page" placeholder="페이지" />
+			<input type="button" id="booklog_save" value="책 기록 저장" 
+				th:attr="data-bookId=${bd.bookId}"/>	
+		</p>
+		
+		<!-- ajax 통신 -->
+		<script>
+			$(function(){
+				// "책 기록 저장" 버튼을 눌렀을 때,
+				$("#booklog_save").click(function(){
+					// 입력란에 있는 값(value)을 불러오기
+					let bc = $("#booklog_comment").val();
+					let bp = $("#booklog_page").val();
+					
+					// {
+					//		bookId: 2,
+					//		page: 50,
+					//		comment: "ㅠㅠㅠ"
+					// }
+					// 웹 서버에 전송할 데이터 양식 채워주기
+					let post_data = {
+						bookId: $("#booklog_save").attr("data-bookId"),
+						comment: bc,
+						page: bp != "" ? bp : null
+					};
+					
+					// post_data 내용을 기반으로, ajax 통신 시도 (localhost:8080(백엔드 서버) 접속 시도)
+					$.ajax({
+						// 웹 서버로 요청을 보낼 때의 사항
+						type: "POST",
+						url: "/book-log/create",
+						data: JSON.stringify(post_data),
+						
+						success: function(data){
+							// 응답으로 받아낸 data를 활용하는 과정
+							// 1. html 상에 표현할 댓글 출력문 작성
+							let add_booklog = "<p>" +
+								(data.page == null ? "" : "(p."+data.page+".)") + 
+								data.comment + 
+								"</p>";
+							// 2. html 페이지 표현
+							$("#book_log").append(add_booklog);
+						},
+						
+						// 응답으로 받을 데이터 양식 정의
+						dataType: "JSON", 
+						contentType: "application/json"
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
+
+
 
 
 

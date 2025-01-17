@@ -1,4 +1,4 @@
-package com.yse.dev.book;
+package com.yse.dev.book.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -153,6 +153,7 @@ public class BookController {
 		// 사용자에게 표현할 데이터 담기 (검색&정렬 완료된 리스트)
 		mav.addObject("book_list", many_books);
 		
+		// list.html로 추출한 책 데이터 전송하면서, 사용자에게 응답
 		return mav;
 	}
 	

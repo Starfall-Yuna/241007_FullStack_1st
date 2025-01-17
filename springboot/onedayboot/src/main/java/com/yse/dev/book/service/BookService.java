@@ -112,16 +112,20 @@ public class BookService {
 	public List<BookListResponseDTO> bookList(String t, Integer p, Integer MaxSize){
 		// DB 데이터 조회한 결과를 담아줄 공간 생성
 		List<Book> books;
-		int total;
 		
+		// 현재 접속하고자 하는 페이지 값에 따른 처리
 		if(p == null) {
 			p = 0;
 		}else {
-			p -= 1;		// List의 각 요소 번호 :: [0] ~ [p-1]
+			p -= 1;
 		}
 		
+		// 사용자가 제시한 검색어가 있는지/없는지에 따른 값 처리
 		if(t == null) {		// 검색어가 없을 때	-> 전체 데이터 조회
 			Pageable pa = PageRequest.of(p, MaxSize, Direction.DESC, "insertDateTime");
+				// "insertDateTime"을 기점으로 내림차순 정렬했을 때
+				// p번 페이지를 펼치는데 MaxSize 이하의 데이터를 표시한다.	
+				// Pageable :: 페이지 형식 정의하여, 실질적인 데이터 중 어떤 데이터를 뽑아올지 결정
 			books = this.br.findAll(pa).toList();	// toList() :: List로 변환
 		}
 		else {	// 사용자가 입력한 검색어(t)가 있을 때			
@@ -140,12 +144,14 @@ public class BookService {
 		}
 		
 		
-		// books :: 검색어를 제목으로 포함하고 있는 데이터 (늦게 삽입한 데이터가 상위로 정렬)
+		// books :: (늦게 삽입한 데이터가 상위로 정렬)
+		//		검색어를 제목으로 포함하고 있는 데이터(t!=null) or 전체 데이터(t==null) 갖고 있음
 		
+		// books에 있는 요소 하나하나를 book으로 접근
+		// 4개의 칼럼 데이터 중에서 2개의 칼럼 데이터(DTO)만 골라서 Controller로 전송
 		return books
 				.stream()		// 데이터 생성 모드 변환
 				.map(book -> new BookListResponseDTO(book.getBookId(), book.getTitle()))
-					// books에 있는 데이터 하나하나에 대해서, DTO 형식으로 변환 (4종류의 데이터 중 2종류만 활용하게끔)
 				.collect(Collectors.toList());
 	}
 }
