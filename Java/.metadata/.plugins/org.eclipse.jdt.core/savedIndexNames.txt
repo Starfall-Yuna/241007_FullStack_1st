@@ -1,14 +1,4 @@
 INDEX VERSION 1.134+C:\Users\AI 풀스택 과정 1차\수업 자료\Java\.metadata\.plugins\org.eclipse.jdt.core
 1865797976.index
-850747128.index
-1613453294.index
-4029997187.index
-3704937893.index
-388786040.index
-4036250239.index
-1172147231.index
-2898143530.index
-1118849030.index
-3686341052.index
 2565356412.index
-2274589417.index
+3702745130.index

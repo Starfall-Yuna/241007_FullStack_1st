@@ -16,7 +16,7 @@
 	<h3>아래 인적사항을 입력해주세요</h3>
 	
 	<%-- n과 g 값을 전달하면서 review.jsp로 돌아옴 --%>
-	<form action="review.jsp" method="get">
+	<form action="Review.jsp" method="get">
 		<label>이름 </label>
 		<input type="text" name="n" />
 		<br>

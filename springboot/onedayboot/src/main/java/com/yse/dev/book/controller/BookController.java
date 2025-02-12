@@ -77,6 +77,9 @@ public class BookController {
 		// service에 있는 delete 기능 함수 수행
 		this.bs.delete(bookId);
 		
+		// 책 데이터 삭제를 수행하면, 그 책과 연결된 댓글이 책에 대해 참조 불가능 	-> 500 에러
+		// (엔티티 간 외래키 설정)
+		
 		// 페이지 이동
 		return "redirect:/book/list";
 	}

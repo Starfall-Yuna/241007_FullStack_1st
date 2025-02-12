@@ -48,7 +48,7 @@ public class logout_session extends HttpServlet {
 		System.out.println("로그아웃이 완료되었습니다.");
 		
 		// 아이디 비밀번호 입력폼으로 돌아가기
-		response.sendRedirect("review_session.html");
+		response.sendRedirect("Review_session.html");
 	}
 
 	/**

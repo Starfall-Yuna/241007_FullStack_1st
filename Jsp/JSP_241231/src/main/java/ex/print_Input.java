@@ -18,13 +18,13 @@ import javax.servlet.http.HttpServletResponse;
 /* "localhost:8080/JSP_1231/print"로 접속할 때에 여기로 이동 */
 
 @WebServlet("/print")
-public class Print_Input extends HttpServlet {
+public class print_Input extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Print_Input() {
+    public print_Input() {
         super();
         // TODO Auto-generated constructor stub
     }

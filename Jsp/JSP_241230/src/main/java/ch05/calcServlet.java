@@ -15,13 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 
 // "/calc"라는 url 접근 -> 해당 파일("CalcServlet.java")로 이동
 @WebServlet("/calc")
-public class CalcServlet extends HttpServlet {
+public class calcServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CalcServlet() {
+    public calcServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

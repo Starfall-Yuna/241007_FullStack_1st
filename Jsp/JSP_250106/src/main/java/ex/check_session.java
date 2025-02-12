@@ -57,7 +57,7 @@ public class check_session extends HttpServlet {
 		}
 		else {
 			System.out.println("관리자 로그인에 실패하였습니다.");
-			response.sendRedirect("login_session.html");
+			response.sendRedirect("Login_session.html");
 		}
 	}
 }

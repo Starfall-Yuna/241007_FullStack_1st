@@ -41,13 +41,16 @@
 			<a th:href="@{/book/list}" th:text="목록으로"></a>
 		</p>
 		
-		<div id="book_log"></div>
+		<div id="book_log">
+			<!-- p 태그에 대해 반복문 수행 (전달받은 id번 책의 댓글 리스트 길이만큼) -->
+			<p th:each="bookLog : ${bd.bookLogs}" th:text="${bookLog.displayComment}"></p>
+		</div>
 		<!-- 댓글 입력하는 공간 작성 -->
 		<p>
 			<input type="text" id="booklog_comment" />
 			<input type="text" id="booklog_page" placeholder="페이지" />
 			<input type="button" id="booklog_save" value="책 기록 저장" 
-				th:attr="data-bookId=${bd.bookId}"/>	
+				th:attr="data-bookId=${bd.bookId}"/>
 		</p>
 		
 		<!-- ajax 통신 -->
@@ -78,6 +81,7 @@
 						url: "/book-log/create",
 						data: JSON.stringify(post_data),
 						
+						// ajax 통신을 통해서 웹 서버 접속에 성공하였다면, 함수 실행
 						success: function(data){
 							// 응답으로 받아낸 data를 활용하는 과정
 							// 1. html 상에 표현할 댓글 출력문 작성

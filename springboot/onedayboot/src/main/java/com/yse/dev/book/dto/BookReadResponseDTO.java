@@ -1,6 +1,8 @@
 package com.yse.dev.book.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import com.yse.dev.book.entity.Book;
 
@@ -22,6 +24,11 @@ public class BookReadResponseDTO {
 	private Integer price;
 	private LocalDateTime insertDateTime;
 	
+	// 특정 하나의 책에 있어 "여러 댓글을 불러올 수 있게끔",
+	// 	댓글을 불러올 때 사용하는 DTO의 List 선언
+	// 	(ex) 3개의 댓글을 불러온다	-> List.size() = 3, DTO 객체도 3개
+	private List<BookLogReadResponseDTO> bookLogs;
+	
 	// Book 엔티티(외부)의 데이터를 매개변수로, DTO(내부) 형식으로 반환
 	// fromBook() :: DTO 객체의 멤버값 설정
 	public BookReadResponseDTO fromBook(Book b) {
@@ -30,6 +37,15 @@ public class BookReadResponseDTO {
 		this.title = b.getTitle();
 		this.price = b.getPrice();
 		this.insertDateTime = b.getInsertDateTime();
+		
+		// 댓글을 불러올 때 사용할 형식을 선언
+		this.bookLogs = b.getBookLogList()		// List 형식 (복수 데이터 보유)
+				.stream()
+				// BookLog 데이터의 5개 칼럼 중 4개의 칼럼만 전송하기 위한 절차
+				.map(bg -> BookLogReadResponseDTO.BookLogFactory(bg))
+				.collect(Collectors.toList());
+				// collect() :: 데이터 작성 종료, 종료할 때마다 bookLogs에 댓글 데이터가 하나씩 들어감
+		
 		return this;	// 내용을 채워넣은 DTO 객체 넘겨줌
 	}
 	

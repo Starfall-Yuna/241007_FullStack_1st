@@ -33,7 +33,7 @@
 	
 	<%-- <%@ include %> :: 특정 내용을 불러올 때 사용 --%>
 	<h3>include Hello.jsp</h3>
-	<%@ include file="../Hello.jsp" %>
+	<%@ include file="../hello.jsp" %>
 	<hr>
 	
 	<%-- <% %> :: 스크립트릿, 자바 문법을 자유롭게 사용 --%>

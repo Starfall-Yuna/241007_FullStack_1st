@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class Animal_Servlet
  */
 @WebServlet("/animal")
-public class Animal_Servlet extends HttpServlet {
+public class animal_Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Animal_Servlet() {
+    public animal_Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }

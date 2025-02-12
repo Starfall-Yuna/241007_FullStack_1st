@@ -69,7 +69,7 @@ public class login_Controller extends HttpServlet {
 				// 콘솔상에서 로그인 실패함을 출력하며
 				System.out.println("로그인에 실패하였습니다.");
 				// front_login.html로 바로 이동
-				response.sendRedirect("front_login.html");
+				response.sendRedirect("Front_login.html");
 				
 				return;		// return;을 적어서 끝내지 않으면, 응답을 2번 하는 꼴 -> 500 에러
 			}
@@ -81,7 +81,7 @@ public class login_Controller extends HttpServlet {
 			
 			// 3. 계정 정보 저장 후, 로그인 페이지로 이동
 			System.out.println("회원가입을 완료하였습니다.");
-			response.sendRedirect("front_login.html");
+			response.sendRedirect("Front_login.html");
 		}
 		else if(command.equals("/login.do")) {
 			// 1. front_login.html의 입력값 저장
@@ -100,7 +100,7 @@ public class login_Controller extends HttpServlet {
 			// 3. 로그인 성공 여부에 따른 페이지 이동 수행
 			if(tf == false) {
 				System.out.println("로그인에 실패하였습니다.");
-				response.sendRedirect("front_login.html");
+				response.sendRedirect("Front_login.html");
 			}
 			else {
 				response.sendRedirect("welcome_login.jsp?id="

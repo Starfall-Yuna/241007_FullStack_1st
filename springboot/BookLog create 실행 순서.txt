@@ -1,0 +1,14 @@
+* 책 댓글 내용(comment, page) 기입하고 저장 버튼 클릭
+- "#booklog_save" 선택자로 인해, jq 이벤트 이동
+- comment와 page 입력란의 value값을 각각 bc와 bp에 저장
+- bc와 bp로, 웹 서버로 전송할 데이터(post_data)를 작성
+	(post_data 내용: bookId, comment, page)
+- jq를 통하여, type "url" data 기반으로 ajax 통신 시도
+	<@RestController에서의 실행 순서>
+	- 실행하기 이전에, bcDTO에 post_data의 값이 들어감
+	- Service 함수를 통해서, 
+		댓글 내용을 DB에 저장 + 저장한 결과를 다시 불러옴
+	- DB로부터 받아온 결과는 bcrDTO에 저장
+	- 위 bcrDTO를 정상적인 데이터로 read.html로 전달
+- 웹 서버 접속에 성공하였기 때문에 success의 함수 실행
+	(DB로부터 받은 결과를 통해 p태그 생성, html 문서 추가)

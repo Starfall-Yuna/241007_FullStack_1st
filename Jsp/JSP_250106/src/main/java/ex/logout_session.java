@@ -49,7 +49,7 @@ public class logout_session extends HttpServlet {
 		System.out.println("removeAttribute() 실행 횟수: "+size);
 		
 		// 세션 제거 후 로그인 창으로 다시 이동
-		response.sendRedirect("login_session.html");
+		response.sendRedirect("Login_session.html");
 	}
 
 	/**

@@ -14,6 +14,7 @@ import com.yse.dev.book.service.BookLogService;
 // 공통점 :: 특정 링크에 대한 로직을 연결하여 "중앙 제어"
 // @Controller :: (데이터를 넘겨줄 때도 있었지만) "화면 정보(View)"를 넘겨서 사용자에게 보여주는 역할
 // @RestController :: "데이터 묶음(JSON)"을 웹 서버(스프링부트 내장서버/톰캣)로 응답을 전달
+//			해당 프로젝트에선, DB에 있는 값을 불러오기 위한 컨트롤러
 //			(스프링부트 내장서버 :: localhost:8080)
 
 @RestController
@@ -47,7 +48,7 @@ public class BookLogController {
 		//	(댓글의 고유 번호(댓글을 DB에 삽입 시 자동 생성값), 댓글을 단 책 번호, 내용, 페이지)
 		
 		// ResponseEntity :: "웹 서버로 전송"하는 응답 (bcrDTO의 데이터 묶음)
-		// ok() :: 정상적으로 웹 서버 전송 (서버 상태값에 문제가 생기지 않게끔)
+		// ok() :: "정상적"으로 웹 서버 전송 (DB로부터 사용자(html)에게 넘기기 위해)
 		return ResponseEntity.ok(bcrDTO);
 	}
 }
