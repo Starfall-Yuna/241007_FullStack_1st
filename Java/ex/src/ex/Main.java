@@ -2,36 +2,33 @@ package ex;
 
 import java.util.Scanner;
 
-abstract class shape{
-	abstract void whatShape();
-}
-
-class circle extends shape{
-	@Override
-	void whatShape() {
-		System.out.println("원 도형 입니다.");
-	}
-}
-
-class triangle extends shape{
-	void whatShape() {
-		System.out.println("삼각형 도형 입니다.");
-	}
-}
-class rectangle extends shape{
-	@Override
-	void whatShape() {
-		System.out.println("사각형 도형 입니다.");
-	}
-}
-
 public class Main {
 	public static void main(String[] args) {
-		circle c = new circle();
-		c.whatShape();
-		triangle t = new triangle();
-		t.whatShape();
-		rectangle r = new rectangle();
-		r.whatShape();
-	}
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("숫자를 입력하세요 : ");
+        int n = scan.nextInt();
+
+        print(n);
+    }
+
+    public static boolean selection(int n) {
+        if (n <= 1) {//n=1 => 출력 수행X
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {//제곱근까지만 검사하면 소수찾기가능함
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void print(int n) {
+        for (int i = 2; i <= n; i++) {
+            if (selection(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
 }
