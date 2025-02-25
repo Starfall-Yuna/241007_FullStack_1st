@@ -23,6 +23,7 @@ print()
 # 딕셔너리 관련 내장 함수
 # keys(), values(), items() :: key값 불러오기, value값 불러오기, 딕셔너리 불러오기
 print(menu.keys(), menu.values(), menu.items(), sep='\n')
+print('111111111')
 # pop() :: 특정 key값의 요소 삭제
 menu.pop('카푸치노')    # '카푸치노' key값 요소 삭제
 print(menu)
