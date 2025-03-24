@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+    <svg id="my_chart" width="200" height="200"></svg>
+    <script>
+        // 샘플 데이터
+        let sample = [10.8, 57.6, 90.4, 57, 5.5]
+        // [{10.8, 0} {57.6, 1}, {90.4, 2}, {57, 3}, {5.5, 4}]
+
+        // 세로 막대 그래프 :: 높이에 따라, 데이터 크기 표현
+        d3.select("#my_chart")      // svg 태그 선택
+        .selectAll("rect")          // 모든 rect에 대해 선택
+        .data(sample)               // 샘플 데이터 삽입
+        .enter()                    // 각 데이터에 대해 객체화 진행
+        .append("rect")             // 각 데이터에 대해, 사각형 태그 삽입
+        .attr("width", "25px")
+        .attr("height", (d,i) => {return d})    // 데이터의 크기만큼, 사각형 높이 설정
+        .attr("x", (d,i) => {return i*35})
+        .attr("y", (d,i) => {return 200-d})     // (전체 svg 영역의 높이) - (사각형의 높이)
+    
+        // 각 데이터의 인덱스, 값에 따라
+        // 일련의 규칙을 잘 설정하여야 원하는 형태의 차트가 나올 수 있음
+    </script>
+</body>
+</html>

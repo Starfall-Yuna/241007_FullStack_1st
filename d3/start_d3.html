@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- d3.js 라이브러리 불러오기 -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+    <!-- svg 통해서 아이콘 표현 -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+        viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M448 80l0 48c0 44.2-100.3 80-224 80S0 172.2 0 128L0 80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6L448 288c0 44.2-100.3 80-224 80S0 332.2 0 288L0 186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6l0 85.9c0 44.2-100.3 80-224 80S0 476.2 0 432l0-85.9z"/></svg>
+
+    <!-- svg 태그 :: 2차원 그래픽, 차트를 표현할 수 있는 영역 -->
+    <svg width="1000" height="500">
+        <g> <!-- 그룹을 짓는 태그 -->
+            <!-- circle 태그 :: r(반지름), cx(원의 x축값), cy(원의 y축값) -->
+            <!-- x, y값 설정 :: 원의 중심을 기점으로 -->
+            <circle r="30" cx="50" cy="50"></circle>
+            <circle r="30" cx="150" cy="150"></circle>
+            <circle r="30" cx="250" cy="250" style="fill:coral"></circle>
+
+            <!-- rect 태그 :: x(x축값), y(y축값), width(너비), height(높이)-->
+            <!-- x, y값 설정 :: 왼쪽 상담의 꼭짓점 기점으로 -->
+            <rect x="300" y="50" width="100" height="100"
+                style="fill:olive; stroke:black; stroke-width:10px"></rect>
+            <rect x="450" y="50" width="100" height="100"
+                style="fill:olive; stroke:black; stroke-width:10px"></rect>
+            
+            <!-- path 태그 :: d에 주어진 꼭짓점들을 순차적으로 연결해서 도형 생성 -->
+            <!-- 어려운 차트 만드는 거 아님 쓸일 없을듯.. -->
+            <path d="M 100,300 100,350 200,300 200,350" style="fill:blank"></path>
+            <path d="M 100,100 100,200 200,200 200,100"></path>
+        </g>
+        <text x="400" y="400">Hello World~~</text>
+    </svg>
+
+    <div class="canvas">
+
+    </div>
+    <script>
+        // d3.js :: 데이터 시각화 목적으로 생성된 라이브러리
+        // 클래스가 canvas인 요소 선택
+        const draw = d3.select(".canvas")
+
+        // div 영역에 차트를 표현하기 위한 svg 태그 생성 & 변수랑 연결
+        const svg_tag = draw.append("svg")
+        .attr("width", 500)
+        .attr("height", 500)
+
+        // svg 태그 안으로, 도형 및 텍스트 표현
+        // text의 좌표는, 왼쪽 하단을 기점으로 설정
+        svg_tag.append("text")
+        .attr("x", 200)
+        .attr("y", 200)
+        .text("Hi~~")
+        .style("font-weight", "bold")
+        .style("font-size", "30px")
+
+        svg_tag.append("rect")
+        .attr("width", 100)
+        .attr("height", 100)
+        .attr("x", 200)
+        .attr("y", 200)
+        .attr("fill", "green")
+
+        // 선 표현 :: 시작점 좌표와 끝점 좌표 설정 
+        svg_tag.append("line")
+        .attr("x1", 200)
+        .attr("y1", 200)
+        .attr("x2", 300)
+        .attr("y2", 300)
+        .attr("stroke", "red")
+    </script>
+</body>
+</html>

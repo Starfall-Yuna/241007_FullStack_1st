@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+    <svg id="chart" width="300" height="350"></svg>
+    <script>
+        // 샘플 데이터
+        let sample = [
+            {name:"C", value: 10}, 
+            {name:"Python", value: 25}, 
+            {name:"Java", value: 37},
+            {name:"C++", value: 14}
+        ]
+        // enter()를 거치면 아래와 같이 객체화
+        // [
+        //      {{name:"C", value: 10}, 0},
+        //      {{name:"Python", value: 25}, 1},
+        //      {{name:"Java", value: 37}, 2},
+        //      {{name:"C++", value: 14}, 3}
+        // ]
+
+        // 차트를 이루는 그래프(사각형)에 대한 설정
+        d3.select("#chart")     // svg 태그 선택
+        .selectAll("rect")      // 모든 사각형에 대해 선택
+        .data(sample)           // 데이터 삽입
+        .enter()                // 각 데이터에 대해서 객체화
+        .append("rect")         // 각 데이터에 대해서 rect 태그 추가
+        .attr("width", "25px")
+        .attr("height", (d,i) => {return d.value*2;})     // 각 데이터의 value값으로 사각형 높이 설정
+        .attr("x", (d,i) => {return i*35;})
+        .attr("y", (d,i) => {return 300-d.value*2;})
+
+        // 차트를 이루는 텍스트에 대한 설정
+        // 일반 text 태그로 생성
+        d3.select("#chart")
+        .selectAll("text")      // 모든 텍스트에 대해 선택
+        .data(sample)           // 데이터 삽입
+        .enter()                // 각 데이터에 대해서 객체화
+        .append("text")         // 각 데이터에 대해 text 태그 추가
+        .attr("x", (d,i) => {return i*35;})
+        //.attr("y", (d,i) => {return 300-d.value*2;})
+        .attr("y", 310)
+        .attr("font-size", "11px")
+        .attr("fill", "blue")
+        .attr("font-weight", "bold")
+        .text((d,i) => {return d.name;})
+
+        // class값 추가한 태그로 생성 (위 d.name값 표시하는 텍스트랑 구분)
+        d3.select("#chart")
+        .selectAll("text.value")        // class 값으로 value값이 있는 text 태그 선택
+        .data(sample)
+        .enter()
+        .append("text")                 // 일반 text 태그 생성
+        .attr("class", "value")         // text 태그의 class 속성에 "value"값 추가
+        .attr("x", (d,i) => {return i*35;})
+        .attr("y", (d,i) => {return 300-d.value*2;})
+        .attr("font-size", "11px")
+        .attr("fill", "red")
+        .text((d,i) => {return d.value;})
+    </script>
+</body>
+</html>

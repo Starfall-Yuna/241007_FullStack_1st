@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+    <div class="chart"></div>
+    <script>
+        // 샘플 데이터
+        let dataArray = [60, 100, 55, 8, 44];
+        // enter()를 거치면, 각 데이터에 대해 {값, 인덱스} 형태로 변형
+        // [{60, 0}, {100, 1}, {55, 2}, {8, 3}, {44, 4}]
+
+        // div 안에 svg 태그 생성
+        const svg_tag = d3.select(".chart")
+        .append("svg")
+        .attr("width", 500)
+        .attr("height", 500)
+
+        // 가로 막대 그래프 :: 너비에 따라 데이터 크기 표현
+        svg_tag.selectAll("rect")   // svg 태그 안의 rect 태그 전체 선택 (rect 태그는 뒤쪽에서 생성)
+        .data(dataArray)            // 샘플 데이터 기반으로 데이터 구성
+        .enter()                    // 샘플 데잍어 기반으로, 각 데이터에 대한 객체 생성 ({데이터, 인덱스} 형태로 객체화)
+        .append("rect")             // 위에서 구성된 데이터 기반으로, rect 태그 생성
+        .attr("width", (d,i) => {return d})     // d :: 데이터, i :: 인덱스
+        .attr("height", "25px")
+        .attr("y", (d,i) => {return i*35}) 
+            // i가 0일 때, 상단으로부터 0만큼 떨어진 꼭짓점에서부터 표현 시작
+            // i가 1일 때, 상단으로부터 35만큼 떨어진 꼭짓점에서부터 표현 시작
+            // i가 2일 때, y = 70
+            // i가 3일 때, y = 105
+            // i가 4일 때, y = 140
+    </script>
+</body>
+</html>

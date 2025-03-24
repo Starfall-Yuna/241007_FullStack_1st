@@ -1,0 +1,7 @@
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp\0324\0324\bin\Debug\0324.exe.config
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp\0324\0324\bin\Debug\0324.exe
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp\0324\0324\bin\Debug\0324.pdb
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp\0324\0324\obj\Debug\0324.csproj.AssemblyReference.cache
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp\0324\0324\obj\Debug\0324.csproj.CoreCompileInputs.cache
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp\0324\0324\obj\Debug\0324.exe
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp\0324\0324\obj\Debug\0324.pdb
