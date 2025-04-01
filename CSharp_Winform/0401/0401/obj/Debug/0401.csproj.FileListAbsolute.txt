@@ -1,0 +1,10 @@
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp_Winform\0401\0401\bin\Debug\0401.exe.config
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp_Winform\0401\0401\bin\Debug\0401.exe
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp_Winform\0401\0401\bin\Debug\0401.pdb
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp_Winform\0401\0401\obj\Debug\0401.csproj.AssemblyReference.cache
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp_Winform\0401\0401\obj\Debug\_0401.Form1.resources
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp_Winform\0401\0401\obj\Debug\_0401.Properties.Resources.resources
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp_Winform\0401\0401\obj\Debug\0401.csproj.GenerateResource.cache
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp_Winform\0401\0401\obj\Debug\0401.csproj.CoreCompileInputs.cache
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp_Winform\0401\0401\obj\Debug\0401.exe
+C:\Users\AI 풀스택 과정 1차\수업 자료\CSharp_Winform\0401\0401\obj\Debug\0401.pdb
