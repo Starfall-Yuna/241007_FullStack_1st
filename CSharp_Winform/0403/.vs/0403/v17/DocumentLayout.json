@@ -1,0 +1,221 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5E24D233-9304-4397-AE4D-B43327E36752}|0403\\0403.csproj|\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E24D233-9304-4397-AE4D-B43327E36752}|0403\\0403.csproj|\\\\192.168.0.135\\users\\ai \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\csharp_winform\\0403\\0403\\form3.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E24D233-9304-4397-AE4D-B43327E36752}|0403\\0403.csproj|\\\\192.168.0.135\\users\\ai \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\csharp_winform\\0403\\0403\\form4.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E24D233-9304-4397-AE4D-B43327E36752}|0403\\0403.csproj|\\\\192.168.0.135\\users\\ai \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\csharp_winform\\0403\\0403\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E24D233-9304-4397-AE4D-B43327E36752}|0403\\0403.csproj|\\\\192.168.0.135\\users\\ai \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\csharp_winform\\0403\\0403\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E24D233-9304-4397-AE4D-B43327E36752}|0403\\0403.csproj|\\\\192.168.0.135\\users\\ai \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\csharp_winform\\0403\\0403\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E24D233-9304-4397-AE4D-B43327E36752}|0403\\0403.csproj|\\\\192.168.0.135\\users\\ai \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\csharp_winform\\0403\\0403\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E24D233-9304-4397-AE4D-B43327E36752}|0403\\0403.csproj|\\\\192.168.0.135\\users\\ai \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\csharp_winform\\0403\\0403\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E24D233-9304-4397-AE4D-B43327E36752}|0403\\0403.csproj|\\\\192.168.0.135\\users\\ai \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\csharp_winform\\0403\\0403\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E24D233-9304-4397-AE4D-B43327E36752}|0403\\0403.csproj|\\\\192.168.0.135\\users\\ai \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\csharp_winform\\0403\\0403\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E24D233-9304-4397-AE4D-B43327E36752}|0403\\0403.csproj|\\\\192.168.0.135\\users\\ai \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\csharp_winform\\0403\\0403\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 421,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form4.Designer.cs",
+              "DocumentMoniker": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form4.Designer.cs",
+              "RelativeDocumentMoniker": "0403\\Form4.Designer.cs",
+              "ToolTip": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form4.Designer.cs",
+              "RelativeToolTip": "0403\\Form4.Designer.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T05:33:07.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form4.cs",
+              "DocumentMoniker": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form4.cs",
+              "RelativeDocumentMoniker": "0403\\Form4.cs",
+              "ToolTip": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form4.cs",
+              "RelativeToolTip": "0403\\Form4.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T05:33:07.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form3.Designer.cs",
+              "DocumentMoniker": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form3.Designer.cs",
+              "RelativeDocumentMoniker": "0403\\Form3.Designer.cs",
+              "ToolTip": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form3.Designer.cs",
+              "RelativeToolTip": "0403\\Form3.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T05:12:16.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form3.cs",
+              "DocumentMoniker": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form3.cs",
+              "RelativeDocumentMoniker": "0403\\Form3.cs",
+              "ToolTip": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form3.cs",
+              "RelativeToolTip": "0403\\Form3.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T05:12:16.677Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "0403\\Form1.Designer.cs",
+              "ToolTip": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form1.Designer.cs",
+              "RelativeToolTip": "0403\\Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T00:42:02.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form2.cs",
+              "RelativeDocumentMoniker": "0403\\Form2.cs",
+              "ToolTip": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form2.cs",
+              "RelativeToolTip": "0403\\Form2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T02:18:42.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form2.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form2.cs",
+              "RelativeDocumentMoniker": "0403\\Form2.cs",
+              "ToolTip": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form2.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "0403\\Form2.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T02:14:26.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form1.cs",
+              "RelativeDocumentMoniker": "0403\\Form1.cs",
+              "ToolTip": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form1.cs",
+              "RelativeToolTip": "0403\\Form1.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T00:39:40.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Program.cs",
+              "RelativeDocumentMoniker": "0403\\Program.cs",
+              "ToolTip": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Program.cs",
+              "RelativeToolTip": "0403\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T00:42:02.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "App.config",
+              "DocumentMoniker": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\App.config",
+              "RelativeDocumentMoniker": "0403\\App.config",
+              "ToolTip": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\App.config",
+              "RelativeToolTip": "0403\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-04-03T00:42:02.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form1.cs",
+              "RelativeDocumentMoniker": "0403\\Form1.cs",
+              "ToolTip": "\\\\192.168.0.135\\Users\\AI \uD480\uC2A4\uD0DD \uACFC\uC815 1\uCC28\\\uC218\uC5C5 \uC790\uB8CC\\CSharp_Winform\\0403\\0403\\Form1.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "0403\\Form1.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T00:39:40.348Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 41,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
