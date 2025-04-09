@@ -1,0 +1,11 @@
+C:\Users\KB\Desktop\0409\0409\bin\Debug\0409.exe.config
+C:\Users\KB\Desktop\0409\0409\bin\Debug\0409.exe
+C:\Users\KB\Desktop\0409\0409\bin\Debug\0409.pdb
+C:\Users\KB\Desktop\0409\0409\obj\Debug\0409.csproj.AssemblyReference.cache
+C:\Users\KB\Desktop\0409\0409\obj\Debug\_0409.Form1.resources
+C:\Users\KB\Desktop\0409\0409\obj\Debug\_0409.Properties.Resources.resources
+C:\Users\KB\Desktop\0409\0409\obj\Debug\0409.csproj.GenerateResource.cache
+C:\Users\KB\Desktop\0409\0409\obj\Debug\0409.csproj.CoreCompileInputs.cache
+C:\Users\KB\Desktop\0409\0409\obj\Debug\0409.exe
+C:\Users\KB\Desktop\0409\0409\obj\Debug\0409.pdb
+C:\Users\KB\Desktop\0409\0409\obj\Debug\_0409.Form2.resources
